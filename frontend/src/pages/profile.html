@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinAlly — Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Fin<span>Ally</span></div>
+        <div class="nav-links">
+            <a href="dashboard.html" class="nav-item">Dashboard</a>
+            <a href="expenses.html" class="nav-item">Expenses</a>
+            <a href="goals.html" class="nav-item">Goals</a>
+            <a href="alerts.html" class="nav-item">Alerts</a>
+            <a href="budget.html" class="nav-item">Budget</a>
+            <a href="simulator.html" class="nav-item">Simulator</a>
+            <a href="leaderboard.html" class="nav-item">Leaderboard</a>
+            <a href="profile.html" class="nav-item active">Profile</a>
+            <a href="index.html" class="btn-outline">Logout</a>
+        </div>
+    </nav>
+
+    <main class="page-main">
+
+        <!-- PAGE HEADER -->
+        <div>
+            <div class="page-tag">MY ACCOUNT</div>
+            <h1 class="page-title">Profile &amp; Settings</h1>
+            <p class="page-sub">Manage your account, profile type, and financial preferences.</p>
+        </div>
+
+        <!-- PROFILE BANNER -->
+        <div class="profile-banner">
+            <div class="pb-avatar">🎓</div>
+            <div class="pb-info">
+                <div class="pb-name">Sanjana</div>
+                <div class="pb-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7c0f1d12161d121d3c1e0a0e1508521d1f521512">[email&#160;protected]</a> &nbsp;·&nbsp; Member since Jan 2026</div>
+                <div class="pb-badges">
+                    <span class="pb-badge badge-profile">🎓 Student Profile</span>
+                    <span class="pb-badge badge-score">⭐ Health Score: 72</span>
+                    <span class="pb-badge badge-streak">🔥 12-Day Streak</span>
+                </div>
+            </div>
+            <div class="pb-right">
+                <div class="score-ring">
+                    <svg viewBox="0 0 100 100" class="ring-svg">
+                        <circle cx="50" cy="50" r="40" class="ring-track"/>
+                        <circle cx="50" cy="50" r="40" class="ring-fill" style="--pct:72"/>
+                    </svg>
+                    <div class="ring-center">
+                        <span class="ring-num">72</span>
+                        <span class="ring-label">Score</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row-2col">
+
+            <!-- PERSONAL INFO -->
+            <div class="card">
+                <div class="section-title">👤 Personal Information</div>
+                <form action="#" class="profile-form">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" value="Sanjana">
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" value="sanjana@bvrit.ac.in">
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" value="+91 9876543210">
+                    </div>
+                    <div class="form-group">
+                        <label>Monthly Income (₹)</label>
+                        <input type="number" value="12000">
+                    </div>
+                    <button type="submit" class="btn-submit">Save Changes →</button>
+                </form>
+            </div>
+
+            <!-- PROFILE TYPE -->
+            <div class="card">
+                <div class="section-title">🎯 Life-Stage Profile</div>
+
+                <div class="profile-select">
+                    <div class="ps-option active">
+                        <span>🎓</span>
+                        <span>Student</span>
+                    </div>
+                    <div class="ps-option">
+                        <span>💼</span>
+                        <span>Professional</span>
+                    </div>
+                    <div class="ps-option">
+                        <span>🏡</span>
+                        <span>Retired</span>
+                    </div>
+                </div>
+
+                <div class="section-title" style="font-size:13px; margin-top:20px; margin-bottom:12px;">Current Profile Settings</div>
+
+                <div class="settings-list">
+                    <div class="st-row">
+                        <span class="st-label">Savings Target</span>
+                        <span class="st-val gold">10% of income</span>
+                    </div>
+                    <div class="st-row">
+                        <span class="st-label">Budget Alert At</span>
+                        <span class="st-val">70% of category</span>
+                    </div>
+                    <div class="st-row">
+                        <span class="st-label">Bot Sensitivity</span>
+                        <span class="st-val green">High — All alerts</span>
+                    </div>
+                    <div class="st-row">
+                        <span class="st-label">Emergency Fund Target</span>
+                        <span class="st-val">3 months expenses</span>
+                    </div>
+                    <div class="st-row">
+                        <span class="st-label">Primary Focus</span>
+                        <span class="st-val green">Habit Building</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ACHIEVEMENTS -->
+        <div class="card">
+            <div class="section-title">🏆 Achievements &amp; Badges</div>
+            <div class="badges-grid">
+
+                <div class="badge-card earned">
+                    <div class="bc-icon">🔥</div>
+                    <div class="bc-name">Streak Master</div>
+                    <div class="bc-desc">12 days in a row</div>
+                    <span class="bc-tag earned-tag">✓ Earned</span>
+                </div>
+
+                <div class="badge-card earned">
+                    <div class="bc-icon">💰</div>
+                    <div class="bc-name">First Saver</div>
+                    <div class="bc-desc">Locked first savings</div>
+                    <span class="bc-tag earned-tag">✓ Earned</span>
+                </div>
+
+                <div class="badge-card earned">
+                    <div class="bc-icon">🎯</div>
+                    <div class="bc-name">Goal Setter</div>
+                    <div class="bc-desc">Created first goal</div>
+                    <span class="bc-tag earned-tag">✓ Earned</span>
+                </div>
+
+                <div class="badge-card locked">
+                    <div class="bc-icon">👑</div>
+                    <div class="bc-name">Budget King</div>
+                    <div class="bc-desc">Stay under all budgets 1 month</div>
+                    <span class="bc-tag locked-tag">🔒 Locked</span>
+                </div>
+
+                <div class="badge-card locked">
+                    <div class="bc-icon">🧘</div>
+                    <div class="bc-name">Impulse Slayer</div>
+                    <div class="bc-desc">Reject 5 impulse prompts</div>
+                    <span class="bc-tag locked-tag">🔒 Locked</span>
+                </div>
+
+                <div class="badge-card locked">
+                    <div class="bc-icon">🌟</div>
+                    <div class="bc-name">Health Hero</div>
+                    <div class="bc-desc">Score above 90 for 2 weeks</div>
+                    <span class="bc-tag locked-tag">🔒 Locked</span>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row-2col">
+
+            <!-- LIFETIME STATS -->
+            <div class="card">
+                <div class="section-title">📊 Your Stats Since Joining</div>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-val green">₹3,200</span>
+                        <span class="stat-label">Total Saved</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-val">247</span>
+                        <span class="stat-label">Transactions Tracked</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-val gold">12</span>
+                        <span class="stat-label">Day Upload Streak</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-val" style="color:var(--info)">38</span>
+                        <span class="stat-label">Bot Alerts Received</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-val green">3</span>
+                        <span class="stat-label">Goals Completed</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-val danger">₹1,890</span>
+                        <span class="stat-label">Impulse Spending Stopped</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHANGE PASSWORD -->
+            <div class="card">
+                <div class="section-title">🔐 Change Password</div>
+                <form action="#" class="profile-form">
+                    <div class="form-group">
+                        <label>Current Password</label>
+                        <input type="password" placeholder="Enter current password">
+                    </div>
+                    <div class="form-group">
+                        <label>New Password</label>
+                        <input type="password" placeholder="Enter new password">
+                    </div>
+                    <div class="form-group">
+                        <label>Confirm New Password</label>
+                        <input type="password" placeholder="Re-enter new password">
+                    </div>
+                    <button type="submit" class="btn-submit">Update Password →</button>
+                </form>
+            </div>
+
+        </div>
+
+        <!-- DANGER ZONE -->
+        <div class="danger-zone">
+            <div class="dz-title">⚠️ Danger Zone</div>
+            <div class="dz-sub">These actions are irreversible. All your transaction history, goals, and alerts will be permanently deleted.</div>
+            <div class="dz-buttons">
+                <a href="#" class="dz-btn">🔄 Reset All Data</a>
+                <a href="index.html" class="dz-btn">🗑️ Delete Account</a>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>

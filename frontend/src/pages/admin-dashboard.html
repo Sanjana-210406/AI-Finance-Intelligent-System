@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinAlly — Admin Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+    <!-- ADMIN NAVBAR -->
+    <nav class="navbar admin-navbar">
+        <div class="logo">Fin<span>Ally</span> <span class="admin-tag">ADMIN</span></div>
+        <div class="nav-links">
+            <a href="admin-dashboard.html" class="nav-item active">Dashboard</a>
+            <a href="admin-users.html" class="nav-item">Users</a>
+            <a href="admin-transactions.html" class="nav-item">Transactions</a>
+            <a href="admin-login.html" class="btn-outline">Logout</a>
+        </div>
+    </nav>
+
+    <main class="admin-main">
+
+        <!-- PAGE HEADER -->
+        <div class="page-header">
+            <div>
+                <div class="page-tag">ADMIN PANEL</div>
+                <h1 class="page-title">Admin Dashboard</h1>
+                <p class="page-sub">System overview — users, transactions, alerts, and health.</p>
+            </div>
+            <div class="admin-time">
+                Last updated: Mar 15, 2026 &nbsp;·&nbsp; 10:45 AM
+            </div>
+        </div>
+
+        <!-- STAT CARDS ROW -->
+        <div class="admin-stats-row">
+
+            <div class="admin-stat-card">
+                <div class="asc-icon" style="background:rgba(0,245,160,0.1);">👥</div>
+                <div class="asc-body">
+                    <span class="asc-val green">1,248</span>
+                    <span class="asc-label">Total Users</span>
+                </div>
+                <div class="asc-change green">+12 today</div>
+            </div>
+
+            <div class="admin-stat-card">
+                <div class="asc-icon" style="background:rgba(255,209,102,0.1);">💸</div>
+                <div class="asc-body">
+                    <span class="asc-val gold">48,392</span>
+                    <span class="asc-label">Total Transactions</span>
+                </div>
+                <div class="asc-change green">+247 today</div>
+            </div>
+
+            <div class="admin-stat-card">
+                <div class="asc-icon" style="background:rgba(77,166,255,0.1);">📸</div>
+                <div class="asc-body">
+                    <span class="asc-val" style="color:var(--info)">2,841</span>
+                    <span class="asc-label">Screenshots Processed</span>
+                </div>
+                <div class="asc-change green">+89 today</div>
+            </div>
+
+            <div class="admin-stat-card">
+                <div class="asc-icon" style="background:rgba(255,90,90,0.1);">🚨</div>
+                <div class="asc-body">
+                    <span class="asc-val danger">342</span>
+                    <span class="asc-label">Active Alerts</span>
+                </div>
+                <div class="asc-change danger">+28 today</div>
+            </div>
+
+        </div>
+
+        <!-- SECOND ROW -->
+        <div class="admin-stats-row">
+
+            <div class="admin-stat-card">
+                <div class="asc-icon" style="background:rgba(0,245,160,0.1);">🎓</div>
+                <div class="asc-body">
+                    <span class="asc-val green">687</span>
+                    <span class="asc-label">Student Users</span>
+                </div>
+                <div class="asc-change">55% of total</div>
+            </div>
+
+            <div class="admin-stat-card">
+                <div class="asc-icon" style="background:rgba(255,209,102,0.1);">💼</div>
+                <div class="asc-body">
+                    <span class="asc-val gold">421</span>
+                    <span class="asc-label">Professional Users</span>
+                </div>
+                <div class="asc-change">34% of total</div>
+            </div>
+
+            <div class="admin-stat-card">
+                <div class="asc-icon" style="background:rgba(77,166,255,0.1);">🏡</div>
+                <div class="asc-body">
+                    <span class="asc-val" style="color:var(--info)">140</span>
+                    <span class="asc-label">Retired Users</span>
+                </div>
+                <div class="asc-change">11% of total</div>
+            </div>
+
+            <div class="admin-stat-card">
+                <div class="asc-icon" style="background:rgba(0,245,160,0.1);">📊</div>
+                <div class="asc-body">
+                    <span class="asc-val green">68.4</span>
+                    <span class="asc-label">Avg Health Score</span>
+                </div>
+                <div class="asc-change green">+2.1 this week</div>
+            </div>
+
+        </div>
+
+        <div class="row-2col">
+
+            <!-- RECENT USERS -->
+            <div class="card">
+                <div class="admin-card-header">
+                    <div class="card-title">👥 Recently Registered Users</div>
+                    <a href="admin-users.html" class="view-all-link">View All →</a>
+                </div>
+
+                <div class="admin-table">
+                    <div class="at-header">
+                        <span>Name</span>
+                        <span>Profile</span>
+                        <span>Joined</span>
+                        <span>Score</span>
+                    </div>
+                    <div class="at-row">
+                        <span class="at-name">Priya R.</span>
+                        <span><span class="profile-chip student">Student</span></span>
+                        <span class="at-date">Mar 15</span>
+                        <span class="at-score green">74</span>
+                    </div>
+                    <div class="at-row">
+                        <span class="at-name">Rahul M.</span>
+                        <span><span class="profile-chip professional">Professional</span></span>
+                        <span class="at-date">Mar 15</span>
+                        <span class="at-score green">81</span>
+                    </div>
+                    <div class="at-row">
+                        <span class="at-name">Sunita K.</span>
+                        <span><span class="profile-chip retired">Retired</span></span>
+                        <span class="at-date">Mar 14</span>
+                        <span class="at-score warning">58</span>
+                    </div>
+                    <div class="at-row">
+                        <span class="at-name">Arjun S.</span>
+                        <span><span class="profile-chip student">Student</span></span>
+                        <span class="at-date">Mar 14</span>
+                        <span class="at-score danger">41</span>
+                    </div>
+                    <div class="at-row">
+                        <span class="at-name">Meera P.</span>
+                        <span><span class="profile-chip professional">Professional</span></span>
+                        <span class="at-date">Mar 13</span>
+                        <span class="at-score green">88</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RECENT ALERTS -->
+            <div class="card">
+                <div class="admin-card-header">
+                    <div class="card-title">🚨 Recent System Alerts</div>
+                    <a href="admin-transactions.html" class="view-all-link">View All →</a>
+                </div>
+
+                <div class="admin-alerts-list">
+                    <div class="aa-item danger">
+                        <span class="aa-dot danger-dot"></span>
+                        <div class="aa-body">
+                            <span class="aa-title">Budget Exceeded — 28 users</span>
+                            <span class="aa-sub">Food &amp; Dining category · Triggered today</span>
+                        </div>
+                        <span class="aa-count danger">28</span>
+                    </div>
+                    <div class="aa-item warning">
+                        <span class="aa-dot warning-dot"></span>
+                        <div class="aa-body">
+                            <span class="aa-title">Subscription Leaks Detected — 41 users</span>
+                            <span class="aa-sub">Netflix, Spotify, Amazon Prime · This week</span>
+                        </div>
+                        <span class="aa-count warning">41</span>
+                    </div>
+                    <div class="aa-item warning">
+                        <span class="aa-dot warning-dot"></span>
+                        <div class="aa-body">
+                            <span class="aa-title">Emotional Spending — 15 users</span>
+                            <span class="aa-sub">Late-night food orders · Last 7 days</span>
+                        </div>
+                        <span class="aa-count warning">15</span>
+                    </div>
+                    <div class="aa-item danger">
+                        <span class="aa-dot danger-dot"></span>
+                        <div class="aa-body">
+                            <span class="aa-title">Low Savings Rate — 19 users</span>
+                            <span class="aa-sub">Below 5% target · March 2026</span>
+                        </div>
+                        <span class="aa-count danger">19</span>
+                    </div>
+                    <div class="aa-item info">
+                        <span class="aa-dot info-dot"></span>
+                        <div class="aa-body">
+                            <span class="aa-title">Streak at Risk — 34 users</span>
+                            <span class="aa-sub">No upload today · Reminder sent</span>
+                        </div>
+                        <span class="aa-count" style="color:var(--green)">34</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- OCR STATS -->
+        <div class="card">
+            <div class="card-title">📸 OCR Processing Stats — Today</div>
+            <div class="ocr-stats-grid">
+                <div class="os-item">
+                    <span class="os-val green">89</span>
+                    <span class="os-label">Screenshots Uploaded</span>
+                </div>
+                <div class="os-item">
+                    <span class="os-val green">247</span>
+                    <span class="os-label">Transactions Extracted</span>
+                </div>
+                <div class="os-item">
+                    <span class="os-val warning">18</span>
+                    <span class="os-label">Unknown Merchants</span>
+                </div>
+                <div class="os-item">
+                    <span class="os-val danger">5</span>
+                    <span class="os-label">Duplicates Detected</span>
+                </div>
+                <div class="os-item">
+                    <span class="os-val green">89.4%</span>
+                    <span class="os-label">OCR Accuracy Rate</span>
+                </div>
+                <div class="os-item">
+                    <span class="os-val" style="color:var(--info)">1.8s</span>
+                    <span class="os-label">Avg Processing Time</span>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>© 2026 FinAlly Admin Panel — Restricted Access</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinAlly — Admin Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body class="admin-body">
+
+    <div class="admin-login-wrap">
+
+        <div class="al-top">
+            <div class="logo">Fin<span>Ally</span></div>
+            <div class="al-badge">ADMIN PANEL</div>
+        </div>
+
+        <div class="admin-login-card">
+            <div class="alc-icon">🛡️</div>
+            <h1 class="alc-title">Admin Access</h1>
+            <p class="alc-sub">Restricted area — authorized personnel only</p>
+
+            <form action="admin-dashboard.html" class="admin-form">
+                <div class="form-group">
+                    <label>Admin Email</label>
+                    <input type="email" placeholder="admin@finally.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Admin Password</label>
+                    <input type="password" placeholder="Enter admin password" required>
+                </div>
+                <div class="form-group">
+                    <label>Admin Key</label>
+                    <input type="password" placeholder="Enter secret admin key" required>
+                </div>
+                <button type="submit" class="btn-submit">Access Admin Panel →</button>
+            </form>
+
+            <a href="index.html" class="al-back">← Back to main site</a>
+        </div>
+
+        <div class="al-footer">
+            All admin actions are logged &nbsp;·&nbsp; Unauthorized access is prohibited
+        </div>
+
+    </div>
+
+</body>
+</html>

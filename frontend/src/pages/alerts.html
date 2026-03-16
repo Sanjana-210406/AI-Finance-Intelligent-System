@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinAlly — Alerts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="alerts.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Fin<span>Ally</span></div>
+        <div class="nav-links">
+            <a href="dashboard.html" class="nav-item">Dashboard</a>
+            <a href="expenses.html" class="nav-item">Expenses</a>
+            <a href="goals.html" class="nav-item">Goals</a>
+            <a href="alerts.html" class="nav-item active">Alerts</a>
+            <a href="budget.html" class="nav-item">Budget</a>
+            <a href="simulator.html" class="nav-item">Simulator</a>
+            <a href="leaderboard.html" class="nav-item">Leaderboard</a>
+            <a href="profile.html" class="nav-item">Profile</a>
+            <a href="index.html" class="btn-outline">Logout</a>
+        </div>
+    </nav>
+
+    <main class="page-main">
+
+        <!-- PAGE HEADER -->
+        <div class="page-header">
+            <div>
+                <div class="page-tag">BEHAVIORAL BOT</div>
+                <h1 class="page-title">Alerts &amp; Insights</h1>
+                <p class="page-sub">Your AI bot is watching every transaction — here's what it found.</p>
+            </div>
+            <div class="page-header-stats">
+                <div class="phs-item">
+                    <span class="phs-val danger">2</span>
+                    <span class="phs-label">Danger</span>
+                </div>
+                <div class="phs-divider"></div>
+                <div class="phs-item">
+                    <span class="phs-val warning">3</span>
+                    <span class="phs-label">Warnings</span>
+                </div>
+                <div class="phs-divider"></div>
+                <div class="phs-item">
+                    <span class="phs-val green">2</span>
+                    <span class="phs-label">Info</span>
+                </div>
+                <div class="phs-divider"></div>
+                <div class="phs-item">
+                    <span class="phs-val">7</span>
+                    <span class="phs-label">Total</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- BOT BANNER -->
+        <div class="bot-banner">
+            <div class="bb-icon">🤖</div>
+            <div class="bb-body">
+                <div class="bb-title">
+                    Behavioral Bot
+                    <span class="bb-live">● LIVE</span>
+                </div>
+                <div class="bb-sub">Last scan: 2 minutes ago &nbsp;·&nbsp; 14 rules active &nbsp;·&nbsp; Next scan: on your next transaction</div>
+            </div>
+        </div>
+
+        <!-- DANGER -->
+        <div class="section-label danger-label">🔴 Danger — Immediate Action Required</div>
+
+        <div class="alert-card ac-danger">
+            <div class="ac-icon-wrap ic-danger">🚨</div>
+            <div class="ac-body">
+                <div class="ac-title">
+                    Budget Exceeded — Food &amp; Dining
+                    <span class="priority-tag pt-danger">DANGER</span>
+                </div>
+                <div class="ac-msg">You have spent <strong>₹3,840</strong> on Food &amp; Dining this month — your budget limit is ₹3,000. You are <strong>₹840 over budget (128%)</strong>. Stop all non-essential food spending immediately.</div>
+                <div class="ac-time">⏱ Triggered 2 hours ago &nbsp;·&nbsp; Mar 15, 2026 at 10:34 AM</div>
+                <div class="ac-links">
+                    <a href="budget.html" class="ac-action-btn">View Budget →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="alert-card ac-danger">
+            <div class="ac-icon-wrap ic-danger">💰</div>
+            <div class="ac-body">
+                <div class="ac-title">
+                    Savings Rate Critical
+                    <span class="priority-tag pt-danger">DANGER</span>
+                </div>
+                <div class="ac-msg">Your savings rate this month is only <strong>3.2%</strong> — far below your Student Profile target of 10%. You need to save ₹1,200 but have only locked ₹384 so far. Your Health Score dropped 8 points.</div>
+                <div class="ac-time">⏱ Triggered 5 hours ago &nbsp;·&nbsp; Mar 15, 2026 at 7:15 AM</div>
+                <div class="ac-links">
+                    <a href="goals.html" class="ac-action-btn">View Goals →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- WARNING -->
+        <div class="section-label warning-label">🟡 Warning — Review Recommended</div>
+
+        <div class="alert-card ac-warning">
+            <div class="ac-icon-wrap ic-warning">🔄</div>
+            <div class="ac-body">
+                <div class="ac-title">
+                    Subscription Leak Detected — Netflix
+                    <span class="priority-tag pt-warning">WARNING</span>
+                </div>
+                <div class="ac-msg">We detected a recurring charge of <strong>₹199/month</strong> to Netflix for the last 4 months (total: ₹796). You have not reviewed this subscription in 60+ days. Are you still using it?</div>
+                <div class="ac-time">⏱ Triggered 1 day ago &nbsp;·&nbsp; Mar 14, 2026</div>
+            </div>
+        </div>
+
+        <div class="alert-card ac-warning">
+            <div class="ac-icon-wrap ic-warning">😔</div>
+            <div class="ac-body">
+                <div class="ac-title">
+                    Emotional Spending Pattern Detected
+                    <span class="priority-tag pt-warning">WARNING</span>
+                </div>
+                <div class="ac-msg">You made <strong>4 food delivery orders after 11 PM</strong> this week totalling ₹1,240. This matches a late-night stress spending pattern. Consider a pause before ordering after midnight.</div>
+                <div class="ac-time">⏱ Triggered 2 days ago &nbsp;·&nbsp; Mar 13, 2026</div>
+                <div class="ac-links">
+                    <a href="expenses.html" class="ac-action-btn">View Transactions →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="alert-card ac-warning">
+            <div class="ac-icon-wrap ic-warning">🎯</div>
+            <div class="ac-body">
+                <div class="ac-title">
+                    Goal Deadline at Risk — Emergency Fund
+                    <span class="priority-tag pt-warning">WARNING</span>
+                </div>
+                <div class="ac-msg">Your Emergency Fund goal of ₹30,000 has a deadline of <strong>June 30, 2026</strong>. At your current savings rate you will only reach ₹18,400 by then — a shortfall of ₹11,600.</div>
+                <div class="ac-time">⏱ Triggered 3 days ago &nbsp;·&nbsp; Mar 12, 2026</div>
+                <div class="ac-links">
+                    <a href="goals.html" class="ac-action-btn">Adjust Goal →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- INFO -->
+        <div class="section-label info-label">🟢 Info — Good to Know</div>
+
+        <div class="alert-card ac-info">
+            <div class="ac-icon-wrap ic-info">🔥</div>
+            <div class="ac-body">
+                <div class="ac-title">
+                    Upload Streak at Risk
+                    <span class="priority-tag pt-info">INFO</span>
+                </div>
+                <div class="ac-msg">You have a <strong>12-day upload streak</strong> — your longest ever! But you have not uploaded today's screenshot yet. Upload before midnight to keep your streak alive.</div>
+                <div class="ac-time">⏱ Triggered 30 minutes ago &nbsp;·&nbsp; Today</div>
+                <div class="ac-links">
+                    <a href="expenses.html" class="ac-action-btn">Upload Now →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="alert-card ac-info">
+            <div class="ac-icon-wrap ic-info">🏆</div>
+            <div class="ac-body">
+                <div class="ac-title">
+                    Transport Budget Looking Great!
+                    <span class="priority-tag pt-info">INFO</span>
+                </div>
+                <div class="ac-msg">You have only spent <strong>₹420 out of ₹1,000</strong> on Transport this month — that is just 42%. You are well under budget with 16 days remaining. Keep it up! 🎉</div>
+                <div class="ac-time">⏱ Triggered 1 day ago &nbsp;·&nbsp; Mar 14, 2026</div>
+            </div>
+        </div>
+
+        <!-- DISMISSED -->
+        <div class="card">
+            <div class="card-title">📂 Dismissed Alerts — This Month</div>
+
+            <div class="alert-card ac-read">
+                <div class="ac-icon-wrap" style="opacity:0.4; font-size:18px;">✅</div>
+                <div class="ac-body">
+                    <div class="ac-title" style="color:var(--text-3)">Income Not Logged for March</div>
+                    <div class="ac-msg">You logged your income of ₹12,000 for March. Dismissed.</div>
+                    <div class="ac-time">Dismissed Mar 5, 2026</div>
+                </div>
+            </div>
+
+            <div class="alert-card ac-read">
+                <div class="ac-icon-wrap" style="opacity:0.4; font-size:18px;">⚠️</div>
+                <div class="ac-body">
+                    <div class="ac-title" style="color:var(--text-3)">Duplicate Transaction — Swiggy ₹320</div>
+                    <div class="ac-msg">Duplicate transaction was reviewed and deleted by user.</div>
+                    <div class="ac-time">Dismissed Mar 4, 2026</div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <p>© 2026 FinAlly — AI-Powered Smart Expense &amp; Savings Management System</p>
+    </footer>
+
+</body>
+</html>
