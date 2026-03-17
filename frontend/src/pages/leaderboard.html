@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinAlly — Leaderboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="leaderboard.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Fin<span>Ally</span></div>
+        <div class="nav-links">
+            <a href="dashboard.html" class="nav-item">Dashboard</a>
+            <a href="expenses.html" class="nav-item">Expenses</a>
+            <a href="goals.html" class="nav-item">Goals</a>
+            <a href="alerts.html" class="nav-item">Alerts</a>
+            <a href="budget.html" class="nav-item">Budget</a>
+            <a href="simulator.html" class="nav-item">Simulator</a>
+            <a href="leaderboard.html" class="nav-item active">Leaderboard</a>
+            <a href="profile.html" class="nav-item">Profile</a>
+            <a href="index.html" class="btn-outline">Logout</a>
+        </div>
+    </nav>
+
+    <main class="page-main">
+
+        <!-- PAGE HEADER -->
+        <div class="page-header">
+            <div>
+                <div class="page-tag">GAMIFICATION</div>
+                <h1 class="page-title">Streaks &amp; Leaderboard</h1>
+                <p class="page-sub">Stay consistent. Earn badges. Climb the leaderboard.</p>
+            </div>
+            <div class="profile-rank-badge">
+                <span class="prb-label">Your Rank</span>
+                <span class="prb-rank">#3</span>
+                <span class="prb-group">Student Group</span>
+            </div>
+        </div>
+
+        <!-- YOUR STATS ROW -->
+        <div class="your-stats">
+            <div class="ys-item">
+                <span class="ys-icon">🔥</span>
+                <span class="ys-val green">12</span>
+                <span class="ys-label">Day Streak</span>
+            </div>
+            <div class="ys-divider"></div>
+            <div class="ys-item">
+                <span class="ys-icon">🏆</span>
+                <span class="ys-val gold">28</span>
+                <span class="ys-label">Best Streak</span>
+            </div>
+            <div class="ys-divider"></div>
+            <div class="ys-item">
+                <span class="ys-icon">⭐</span>
+                <span class="ys-val">72</span>
+                <span class="ys-label">Health Score</span>
+            </div>
+            <div class="ys-divider"></div>
+            <div class="ys-item">
+                <span class="ys-icon">🏅</span>
+                <span class="ys-val green">3</span>
+                <span class="ys-label">Badges Earned</span>
+            </div>
+            <div class="ys-divider"></div>
+            <div class="ys-item">
+                <span class="ys-icon">🎯</span>
+                <span class="ys-val">247</span>
+                <span class="ys-label">Transactions</span>
+            </div>
+            <div class="ys-divider"></div>
+            <div class="ys-item">
+                <span class="ys-icon">💰</span>
+                <span class="ys-val gold">₹3,200</span>
+                <span class="ys-label">Total Saved</span>
+            </div>
+        </div>
+
+        <!-- STREAK CARD -->
+        <div class="card streak-card">
+            <div class="card-title">🔥 Upload Streak — March 2026</div>
+            <div class="streak-body">
+                <div class="streak-big">
+                    <span class="sb-num">12</span>
+                    <span class="sb-label">Days in a row</span>
+                    <span class="sb-sub">Keep going — 18 more days to beat your best of 28!</span>
+                </div>
+                <div class="streak-calendar">
+                    <!-- Week labels -->
+                    <div class="sc-label-row">
+                        <span>S</span><span>M</span><span>T</span>
+                        <span>W</span><span>T</span><span>F</span><span>S</span>
+                    </div>
+                    <!-- Days -->
+                    <div class="sc-days">
+                        <div class="sc-day empty"></div>
+                        <div class="sc-day empty"></div>
+                        <div class="sc-day empty"></div>
+                        <div class="sc-day empty"></div>
+                        <div class="sc-day empty"></div>
+                        <div class="sc-day empty"></div>
+                        <div class="sc-day done">1</div>
+
+                        <div class="sc-day done">2</div>
+                        <div class="sc-day done">3</div>
+                        <div class="sc-day done">4</div>
+                        <div class="sc-day done">5</div>
+                        <div class="sc-day done">6</div>
+                        <div class="sc-day done">7</div>
+                        <div class="sc-day done">8</div>
+
+                        <div class="sc-day done">9</div>
+                        <div class="sc-day done">10</div>
+                        <div class="sc-day done">11</div>
+                        <div class="sc-day done">12</div>
+                        <div class="sc-day today">13</div>
+                        <div class="sc-day future">14</div>
+                        <div class="sc-day future">15</div>
+
+                        <div class="sc-day future">16</div>
+                        <div class="sc-day future">17</div>
+                        <div class="sc-day future">18</div>
+                        <div class="sc-day future">19</div>
+                        <div class="sc-day future">20</div>
+                        <div class="sc-day future">21</div>
+                        <div class="sc-day future">22</div>
+
+                        <div class="sc-day future">23</div>
+                        <div class="sc-day future">24</div>
+                        <div class="sc-day future">25</div>
+                        <div class="sc-day future">26</div>
+                        <div class="sc-day future">27</div>
+                        <div class="sc-day future">28</div>
+                        <div class="sc-day future">29</div>
+
+                        <div class="sc-day future">30</div>
+                        <div class="sc-day future">31</div>
+                    </div>
+                </div>
+            </div>
+            <div class="streak-legend">
+                <span class="sl-item"><span class="sl-dot done"></span>Uploaded</span>
+                <span class="sl-item"><span class="sl-dot today"></span>Today</span>
+                <span class="sl-item"><span class="sl-dot future"></span>Upcoming</span>
+            </div>
+        </div>
+
+        <div class="row-2col">
+
+            <!-- BADGES -->
+            <div class="card">
+                <div class="card-title">🏅 Badges</div>
+                <div class="badges-grid">
+
+                    <div class="badge-item earned">
+                        <div class="bi-icon">🔥</div>
+                        <div class="bi-name">Streak Master</div>
+                        <div class="bi-desc">12 days in a row</div>
+                        <div class="bi-status earned-status">✓ Earned</div>
+                    </div>
+
+                    <div class="badge-item earned">
+                        <div class="bi-icon">💰</div>
+                        <div class="bi-name">First Saver</div>
+                        <div class="bi-desc">Locked first savings</div>
+                        <div class="bi-status earned-status">✓ Earned</div>
+                    </div>
+
+                    <div class="badge-item earned">
+                        <div class="bi-icon">🎯</div>
+                        <div class="bi-name">Goal Setter</div>
+                        <div class="bi-desc">Created 3 goals</div>
+                        <div class="bi-status earned-status">✓ Earned</div>
+                    </div>
+
+                    <div class="badge-item progress">
+                        <div class="bi-icon">👑</div>
+                        <div class="bi-name">Budget King</div>
+                        <div class="bi-desc">Stay under all budgets</div>
+                        <div class="bi-progress">
+                            <div class="bar-track">
+                                <div class="bar-fill-gold" style="width:60%"></div>
+                            </div>
+                            <span class="bi-pct">60%</span>
+                        </div>
+                    </div>
+
+                    <div class="badge-item locked">
+                        <div class="bi-icon">🧘</div>
+                        <div class="bi-name">Impulse Slayer</div>
+                        <div class="bi-desc">Reject 5 impulse buys</div>
+                        <div class="bi-status locked-status">🔒 Locked</div>
+                    </div>
+
+                    <div class="badge-item locked">
+                        <div class="bi-icon">🌟</div>
+                        <div class="bi-name">Health Hero</div>
+                        <div class="bi-desc">Score 90+ for 2 weeks</div>
+                        <div class="bi-status locked-status">🔒 Locked</div>
+                    </div>
+
+                    <div class="badge-item locked">
+                        <div class="bi-icon">🦁</div>
+                        <div class="bi-name">Savings Lion</div>
+                        <div class="bi-desc">Save ₹10,000 total</div>
+                        <div class="bi-status locked-status">🔒 Locked</div>
+                    </div>
+
+                    <div class="badge-item locked">
+                        <div class="bi-icon">📅</div>
+                        <div class="bi-name">Month Master</div>
+                        <div class="bi-desc">30-day upload streak</div>
+                        <div class="bi-status locked-status">🔒 Locked</div>
+                    </div>
+
+                    <div class="badge-item locked">
+                        <div class="bi-icon">🎓</div>
+                        <div class="bi-name">Finance Scholar</div>
+                        <div class="bi-desc">Complete all modules</div>
+                        <div class="bi-status locked-status">🔒 Locked</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- LEADERBOARD -->
+            <div class="card">
+                <div class="card-title">🏆 Student Leaderboard — March 2026</div>
+                <p class="lb-note">Anonymous rankings by Health Score within your profile group.</p>
+
+                <div class="lb-list">
+
+                    <div class="lb-row rank-1">
+                        <div class="lb-rank">🥇</div>
+                        <div class="lb-info">
+                            <span class="lb-name">A***a</span>
+                            <span class="lb-detail">28-day streak &nbsp;·&nbsp; 5 badges</span>
+                        </div>
+                        <div class="lb-score">
+                            <span class="lb-score-val">91</span>
+                            <span class="lb-score-label">score</span>
+                        </div>
+                    </div>
+
+                    <div class="lb-row rank-2">
+                        <div class="lb-rank">🥈</div>
+                        <div class="lb-info">
+                            <span class="lb-name">R***h</span>
+                            <span class="lb-detail">21-day streak &nbsp;·&nbsp; 4 badges</span>
+                        </div>
+                        <div class="lb-score">
+                            <span class="lb-score-val">84</span>
+                            <span class="lb-score-label">score</span>
+                        </div>
+                    </div>
+
+                    <!-- YOU -->
+                    <div class="lb-row rank-you">
+                        <div class="lb-rank">🥉</div>
+                        <div class="lb-info">
+                            <span class="lb-name">You (Sanjana) <span class="you-tag">YOU</span></span>
+                            <span class="lb-detail">12-day streak &nbsp;·&nbsp; 3 badges</span>
+                        </div>
+                        <div class="lb-score">
+                            <span class="lb-score-val green">72</span>
+                            <span class="lb-score-label">score</span>
+                        </div>
+                    </div>
+
+                    <div class="lb-row">
+                        <div class="lb-rank lb-rank-num">4</div>
+                        <div class="lb-info">
+                            <span class="lb-name">P***i</span>
+                            <span class="lb-detail">9-day streak &nbsp;·&nbsp; 2 badges</span>
+                        </div>
+                        <div class="lb-score">
+                            <span class="lb-score-val" style="color:var(--text-2)">68</span>
+                            <span class="lb-score-label">score</span>
+                        </div>
+                    </div>
+
+                    <div class="lb-row">
+                        <div class="lb-rank lb-rank-num">5</div>
+                        <div class="lb-info">
+                            <span class="lb-name">M***a</span>
+                            <span class="lb-detail">6-day streak &nbsp;·&nbsp; 2 badges</span>
+                        </div>
+                        <div class="lb-score">
+                            <span class="lb-score-val" style="color:var(--text-2)">61</span>
+                            <span class="lb-score-label">score</span>
+                        </div>
+                    </div>
+
+                    <div class="lb-row">
+                        <div class="lb-rank lb-rank-num">6</div>
+                        <div class="lb-info">
+                            <span class="lb-name">T***r</span>
+                            <span class="lb-detail">4-day streak &nbsp;·&nbsp; 1 badge</span>
+                        </div>
+                        <div class="lb-score">
+                            <span class="lb-score-val" style="color:var(--text-3)">54</span>
+                            <span class="lb-score-label">score</span>
+                        </div>
+                    </div>
+
+                    <div class="lb-row">
+                        <div class="lb-rank lb-rank-num">7</div>
+                        <div class="lb-info">
+                            <span class="lb-name">K***n</span>
+                            <span class="lb-detail">2-day streak &nbsp;·&nbsp; 1 badge</span>
+                        </div>
+                        <div class="lb-score">
+                            <span class="lb-score-val" style="color:var(--text-3)">47</span>
+                            <span class="lb-score-label">score</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="lb-footer">
+                    🔒 Names anonymized for privacy &nbsp;·&nbsp; Rankings update daily at midnight
+                </div>
+            </div>
+
+        </div>
+
+        <!-- NEXT MILESTONE -->
+        <div class="card milestone-card">
+            <div class="card-title">🎯 Your Next Milestones</div>
+            <div class="milestone-grid">
+
+                <div class="ms-item">
+                    <div class="ms-icon">🥈</div>
+                    <div class="ms-body">
+                        <div class="ms-title">Reach Rank #2</div>
+                        <div class="ms-desc">Improve Health Score from 72 to 84 (+12 points needed)</div>
+                        <div class="bar-track" style="margin-top:8px;">
+                            <div class="bar-fill-gold" style="width:60%"></div>
+                        </div>
+                        <div class="ms-pct">60% there</div>
+                    </div>
+                </div>
+
+                <div class="ms-item">
+                    <div class="ms-icon">📅</div>
+                    <div class="ms-body">
+                        <div class="ms-title">Beat Best Streak</div>
+                        <div class="ms-desc">Upload for 16 more days to beat your record of 28 days</div>
+                        <div class="bar-track" style="margin-top:8px;">
+                            <div class="bar-fill-green" style="width:43%"></div>
+                        </div>
+                        <div class="ms-pct">43% there</div>
+                    </div>
+                </div>
+
+                <div class="ms-item">
+                    <div class="ms-icon">👑</div>
+                    <div class="ms-body">
+                        <div class="ms-title">Budget King Badge</div>
+                        <div class="ms-desc">Stay under all budgets for the rest of this month</div>
+                        <div class="bar-track" style="margin-top:8px;">
+                            <div class="bar-fill-gold" style="width:60%"></div>
+                        </div>
+                        <div class="ms-pct">60% there</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>© 2026 FinAlly — AI-Powered Smart Expense &amp; Savings Management System</p>
+    </footer>
+
+</body>
+</html>

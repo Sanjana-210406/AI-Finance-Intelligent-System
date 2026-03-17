@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinAlly — Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">Fin<span>Ally</span></div>
+        <div class="nav-links">
+            <a href="dashboard.html" class="nav-item active">Dashboard</a>
+            <a href="expenses.html" class="nav-item">Expenses</a>
+            <a href="goals.html" class="nav-item">Goals</a>
+            <a href="alerts.html" class="nav-item">Alerts</a>
+            <a href="budget.html" class="nav-item">Budget</a>
+            <a href="simulator.html" class="nav-item">Simulator</a>
+            <a href="leaderboard.html" class="nav-item">Leaderboard</a>
+            <a href="profile.html" class="nav-item">Profile</a>
+            <a href="index.html" class="btn-outline">Logout</a>
+        </div>
+    </nav>
+
+    <main class="dash-main">
+
+        <!-- ROW 1: Welcome + Health Score -->
+        <div class="row-2col">
+
+            <div class="card welcome-card">
+                <div class="wc-top">
+                    <div>
+                        <p class="wc-greet">Good Morning 👋</p>
+                        <h2 class="wc-name">Sanjana</h2>
+                        <span class="wc-badge">🎓 Student Profile — March 2026</span>
+                    </div>
+                </div>
+                <div class="wc-stats">
+                    <div class="wc-stat">
+                        <span class="wcs-val green">₹12,000</span>
+                        <span class="wcs-label">Monthly Income</span>
+                    </div>
+                    <div class="wc-stat-divider"></div>
+                    <div class="wc-stat">
+                        <span class="wcs-val gold">₹1,200</span>
+                        <span class="wcs-label">Locked Savings (10%)</span>
+                    </div>
+                    <div class="wc-stat-divider"></div>
+                    <div class="wc-stat">
+                        <span class="wcs-val">₹10,800</span>
+                        <span class="wcs-label">Spendable Budget</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card health-card">
+                <div class="card-title">Financial Health Score</div>
+                <div class="hc-body">
+                    <div class="score-ring">
+                        <svg viewBox="0 0 100 100" class="ring-svg">
+                            <circle cx="50" cy="50" r="40" class="ring-track"/>
+                            <circle cx="50" cy="50" r="40" class="ring-fill" style="--pct:72"/>
+                        </svg>
+                        <div class="ring-center">
+                            <span class="ring-num">72</span>
+                            <span class="ring-label">Good</span>
+                        </div>
+                    </div>
+                    <div class="hc-components">
+                        <div class="hcc-row">
+                            <span>Savings Rate</span>
+                            <div class="bar-track"><div class="bar-fill-green" style="width:80%"></div></div>
+                            <span class="hcc-score">28/35</span>
+                        </div>
+                        <div class="hcc-row">
+                            <span>Budget Adherence</span>
+                            <div class="bar-track"><div class="bar-fill-green" style="width:72%"></div></div>
+                            <span class="hcc-score">18/25</span>
+                        </div>
+                        <div class="hcc-row">
+                            <span>Goal Progress</span>
+                            <div class="bar-track"><div class="bar-fill-gold" style="width:60%"></div></div>
+                            <span class="hcc-score">12/20</span>
+                        </div>
+                        <div class="hcc-row">
+                            <span>Emergency Fund</span>
+                            <div class="bar-track"><div class="bar-fill-green" style="width:70%"></div></div>
+                            <span class="hcc-score">7/10</span>
+                        </div>
+                        <div class="hcc-row">
+                            <span>Behavior Score</span>
+                            <div class="bar-track"><div class="bar-fill-gold" style="width:70%"></div></div>
+                            <span class="hcc-score">7/10</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- BOT CARD -->
+        <div class="card bot-card">
+            <div class="bc-left">
+                <div class="bc-icon">🤖</div>
+                <div>
+                    <div class="bc-title">FinAlly Says <span class="bc-live">● LIVE</span></div>
+                    <div class="bc-sub">Behavioral Bot · Updated just now</div>
+                </div>
+            </div>
+            <p class="bc-msg">
+                "At your current pace you will exceed your Food budget by ₹800 in 6 days.
+                Consider cooking at home twice this week — that alone closes 70% of the gap."
+            </p>
+            <div class="bc-actions">
+                <a href="alerts.html" class="bc-btn-primary">View Full Insight</a>
+                <a href="alerts.html" class="bc-btn-ghost">View All Alerts</a>
+            </div>
+        </div>
+
+        <!-- ROW 2: Budget + Goals -->
+        <div class="row-2col">
+
+            <div class="card">
+                <div class="card-title">Budget Overview — March 2026</div>
+                <div class="budget-list">
+                    <div class="bi">
+                        <div class="bi-top">
+                            <span class="bi-cat">🍔 Food</span>
+                            <span class="bi-amt">₹2,100 <span class="bi-of">/ ₹3,000</span></span>
+                        </div>
+                        <div class="bar-track"><div class="bar-fill-gold" style="width:70%"></div></div>
+                        <div class="bi-bot"><span class="text-gold">70% used</span><span class="text-muted">₹900 left</span></div>
+                    </div>
+                    <div class="bi">
+                        <div class="bi-top">
+                            <span class="bi-cat">🚌 Transport</span>
+                            <span class="bi-amt">₹800 <span class="bi-of">/ ₹2,000</span></span>
+                        </div>
+                        <div class="bar-track"><div class="bar-fill-green" style="width:40%"></div></div>
+                        <div class="bi-bot"><span class="text-green">40% used</span><span class="text-muted">₹1,200 left</span></div>
+                    </div>
+                    <div class="bi">
+                        <div class="bi-top">
+                            <span class="bi-cat">🏠 Rent</span>
+                            <span class="bi-amt">₹3,500 <span class="bi-of">/ ₹3,500</span></span>
+                        </div>
+                        <div class="bar-track"><div class="bar-fill-danger" style="width:100%"></div></div>
+                        <div class="bi-bot"><span class="text-danger">100% — Full</span><span class="text-muted">₹0 left</span></div>
+                    </div>
+                    <div class="bi">
+                        <div class="bi-top">
+                            <span class="bi-cat">🎬 Entertainment</span>
+                            <span class="bi-amt">₹400 <span class="bi-of">/ ₹1,500</span></span>
+                        </div>
+                        <div class="bar-track"><div class="bar-fill-green" style="width:27%"></div></div>
+                        <div class="bi-bot"><span class="text-green">27% used</span><span class="text-muted">₹1,100 left</span></div>
+                    </div>
+                    <div class="bi">
+                        <div class="bi-top">
+                            <span class="bi-cat">💊 Medical</span>
+                            <span class="bi-amt">₹0 <span class="bi-of">/ ₹800</span></span>
+                        </div>
+                        <div class="bar-track"><div class="bar-fill-green" style="width:0%"></div></div>
+                        <div class="bi-bot"><span class="text-green">0% used</span><span class="text-muted">₹800 left</span></div>
+                    </div>
+                </div>
+                <a href="budget.html" class="btn-view-all" style="display:block; text-align:center; margin-top:14px;">View Full Budget →</a>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Savings Goals</div>
+                <div class="goals-list">
+                    <div class="goal-item">
+                        <div class="gi-top">
+                            <span class="gi-name">🛡️ Emergency Fund <span class="gi-priority">PRIORITY</span></span>
+                            <span class="gi-amt text-green">₹16,800 / ₹24,000</span>
+                        </div>
+                        <div class="bar-track"><div class="bar-fill-green" style="width:70%"></div></div>
+                        <div class="gi-bot"><span>70% complete</span><span class="text-muted">₹1,200/month</span></div>
+                    </div>
+                    <div class="goal-item">
+                        <div class="gi-top">
+                            <span class="gi-name">💻 New Laptop</span>
+                            <span class="gi-amt">₹8,000 / ₹40,000</span>
+                        </div>
+                        <div class="bar-track"><div class="bar-fill-gold" style="width:20%"></div></div>
+                        <div class="gi-bot"><span>20% complete</span><span class="text-muted">Dec 2026</span></div>
+                    </div>
+                    <div class="goal-item">
+                        <div class="gi-top">
+                            <span class="gi-name">🎯 Yearly Target</span>
+                            <span class="gi-amt">₹7,200 / ₹14,400</span>
+                        </div>
+                        <div class="bar-track"><div class="bar-fill-green" style="width:50%"></div></div>
+                        <div class="gi-bot"><span>50% complete</span><span class="text-muted">6 months left</span></div>
+                    </div>
+                </div>
+                <a href="goals.html" class="btn-add">+ Add New Goal</a>
+            </div>
+
+        </div>
+
+        <!-- ROW 3: Transactions + Alerts -->
+        <div class="row-2col">
+
+            <div class="card">
+                <div class="card-title">Recent Transactions</div>
+                <div class="tx-list">
+                    <div class="tx-item">
+                        <div class="tx-icon">🍔</div>
+                        <div class="tx-info">
+                            <span class="tx-name">Swiggy</span>
+                            <span class="tx-date">Today, 1:30 PM</span>
+                        </div>
+                        <div class="tx-right">
+                            <span class="tx-amt danger">- ₹320</span>
+                            <span class="tag-want">Want</span>
+                        </div>
+                    </div>
+                    <div class="tx-item">
+                        <div class="tx-icon">🚌</div>
+                        <div class="tx-info">
+                            <span class="tx-name">Metro Card Recharge</span>
+                            <span class="tx-date">Yesterday, 9:00 AM</span>
+                        </div>
+                        <div class="tx-right">
+                            <span class="tx-amt danger">- ₹200</span>
+                            <span class="tag-need">Need</span>
+                        </div>
+                    </div>
+                    <div class="tx-item">
+                        <div class="tx-icon">🎬</div>
+                        <div class="tx-info">
+                            <span class="tx-name">Netflix</span>
+                            <span class="tx-date">Mar 1, 11:00 PM</span>
+                        </div>
+                        <div class="tx-right">
+                            <span class="tx-amt danger">- ₹199</span>
+                            <span class="tag-subscription">Subscription</span>
+                        </div>
+                    </div>
+                    <div class="tx-item">
+                        <div class="tx-icon">📚</div>
+                        <div class="tx-info">
+                            <span class="tx-name">Udemy Course</span>
+                            <span class="tx-date">Feb 28, 3:00 PM</span>
+                        </div>
+                        <div class="tx-right">
+                            <span class="tx-amt danger">- ₹499</span>
+                            <span class="tag-need">Need</span>
+                        </div>
+                    </div>
+                </div>
+                <a href="expenses.html" class="btn-view-all">View All Transactions →</a>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Active Alerts</div>
+                <div class="alerts-list">
+                    <div class="alert-item al-danger">
+                        <span class="al-icon">🔴</span>
+                        <div class="al-body">
+                            <span class="al-title">Rent Budget Full</span>
+                            <span class="al-msg">100% of Rent budget used this month.</span>
+                        </div>
+                    </div>
+                    <div class="alert-item al-warning">
+                        <span class="al-icon">🟡</span>
+                        <div class="al-body">
+                            <span class="al-title">Food Budget Warning</span>
+                            <span class="al-msg">70% used — ₹900 remaining in Food.</span>
+                        </div>
+                    </div>
+                    <div class="alert-item al-info">
+                        <span class="al-icon">⚡</span>
+                        <div class="al-body">
+                            <span class="al-title">Predictive Alert</span>
+                            <span class="al-msg">Food budget exceeded in 6 days at current pace.</span>
+                        </div>
+                    </div>
+                    <div class="alert-item al-info">
+                        <span class="al-icon">🔔</span>
+                        <div class="al-body">
+                            <span class="al-title">Subscription Detected</span>
+                            <span class="al-msg">Netflix ₹199/month — last charged Mar 1.</span>
+                        </div>
+                    </div>
+                </div>
+                <a href="alerts.html" class="btn-view-all">View All Alerts →</a>
+            </div>
+
+        </div>
+
+        <!-- GAMIFICATION -->
+        <div class="card">
+            <div class="card-title">🏆 Achievements &amp; Streaks</div>
+            <div class="streaks-row">
+                <div class="streak-item">
+                    <span class="si-icon">🔥</span>
+                    <span class="si-num green">12</span>
+                    <span class="si-label">Day Logging Streak</span>
+                </div>
+                <div class="streak-item">
+                    <span class="si-icon">💰</span>
+                    <span class="si-num gold">2</span>
+                    <span class="si-label">Months Under Budget</span>
+                </div>
+                <div class="streak-item">
+                    <span class="si-icon">🎯</span>
+                    <span class="si-num green">2</span>
+                    <span class="si-label">Savings Hit Streak</span>
+                </div>
+                <div class="streak-item">
+                    <span class="si-icon">😇</span>
+                    <span class="si-num gold">14</span>
+                    <span class="si-label">Days No Impulse Spend</span>
+                </div>
+            </div>
+            <div class="badges-row">
+                <span class="badge earned">🛡️ Emergency Fund Hero</span>
+                <span class="badge earned">🎯 First Goal Completed</span>
+                <span class="badge locked">🏅 Savings Champion</span>
+                <span class="badge locked">⭐ Budget Master</span>
+                <span class="badge locked">💎 Health Score 90+</span>
+            </div>
+            <a href="leaderboard.html" class="btn-view-all" style="display:block; text-align:center; margin-top:16px;">View Full Leaderboard →</a>
+        </div>
+
+    </main>
+
+    <!-- FAB — goes to expenses upload page -->
+    <a href="expenses.html" class="fab">+ Add Expense</a>
+
+</body>
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinAlly — Budget</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="budget.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Fin<span>Ally</span></div>
+        <div class="nav-links">
+            <a href="dashboard.html" class="nav-item">Dashboard</a>
+            <a href="expenses.html" class="nav-item">Expenses</a>
+            <a href="goals.html" class="nav-item">Goals</a>
+            <a href="alerts.html" class="nav-item">Alerts</a>
+            <a href="budget.html" class="nav-item active">Budget</a>
+            <a href="simulator.html" class="nav-item">Simulator</a>
+            <a href="leaderboard.html" class="nav-item">Leaderboard</a>
+            <a href="profile.html" class="nav-item">Profile</a>
+            <a href="index.html" class="btn-outline">Logout</a>
+        </div>
+    </nav>
+
+    <main class="page-main">
+
+        <!-- PAGE HEADER -->
+        <div class="page-header">
+            <div>
+                <div class="page-tag">SAVINGS-FIRST BUDGET</div>
+                <h1 class="page-title">March 2026 Budget</h1>
+                <p class="page-sub">Savings locked first — you spend what remains. That is the FinAlly way.</p>
+            </div>
+        </div>
+
+        <!-- INCOME OVERVIEW -->
+        <div class="income-banner">
+            <div class="ib-item">
+                <span class="ib-label">Monthly Income</span>
+                <span class="ib-val">₹12,000</span>
+                <span class="ib-sub">Logged on Mar 5</span>
+            </div>
+            <div class="ib-divider"></div>
+            <div class="ib-item">
+                <span class="ib-label">Locked Savings (10%)</span>
+                <span class="ib-val gold">₹1,200</span>
+                <span class="ib-sub">Auto-locked before spending</span>
+            </div>
+            <div class="ib-divider"></div>
+            <div class="ib-item">
+                <span class="ib-label">Spendable Budget</span>
+                <span class="ib-val green">₹10,800</span>
+                <span class="ib-sub">After savings deduction</span>
+            </div>
+            <div class="ib-divider"></div>
+            <div class="ib-item">
+                <span class="ib-label">Remaining</span>
+                <span class="ib-val danger">₹3,582</span>
+                <span class="ib-sub">₹7,218 spent so far</span>
+            </div>
+        </div>
+
+        <!-- SAVINGS LOCK BANNER -->
+        <div class="savings-lock">
+            <span class="sl-icon">🔒</span>
+            <div class="sl-body">
+                <div class="sl-title">Savings-First Model — Active</div>
+                <div class="sl-sub">₹1,200 was automatically locked into your Emergency Fund the moment you logged your March income. This cannot be spent unless you manually override it.</div>
+            </div>
+            <div class="sl-right">
+                <span class="sl-amt">₹1,200</span>
+                <span class="sl-pct">10% of ₹12,000 locked</span>
+            </div>
+        </div>
+
+        <!-- NEED VS WANT -->
+        <div class="row-2col">
+
+            <div class="card">
+                <div class="card-title">Needs vs Wants This Month</div>
+
+                <div class="nw-row">
+                    <div class="nw-label">
+                        <span class="nw-dot green"></span>
+                        Needs (Essentials)
+                    </div>
+                    <span class="nw-amt">₹1,431 / ₹3,300</span>
+                </div>
+                <div class="bar-track" style="margin-bottom:16px;">
+                    <div class="bar-fill-green" style="width:43%"></div>
+                </div>
+                <div class="nw-note green">✅ 43% used — Transport + Education + Medical on track</div>
+
+                <div class="nw-divider"></div>
+
+                <div class="nw-row" style="margin-top:16px;">
+                    <div class="nw-label">
+                        <span class="nw-dot gold"></span>
+                        Wants (Discretionary)
+                    </div>
+                    <span class="nw-amt danger">₹6,787 / ₹5,000</span>
+                </div>
+                <div class="bar-track" style="margin-bottom:16px;">
+                    <div class="bar-fill-danger" style="width:100%"></div>
+                </div>
+                <div class="nw-note danger">⚠️ 136% used — Food + Shopping + Subscriptions exceeded</div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Monthly Summary</div>
+                <div class="summary-grid">
+                    <div class="sg-item">
+                        <span class="sg-val">₹12,000</span>
+                        <span class="sg-label">Total Income</span>
+                    </div>
+                    <div class="sg-item">
+                        <span class="sg-val gold">₹1,200</span>
+                        <span class="sg-label">Savings Locked</span>
+                    </div>
+                    <div class="sg-item">
+                        <span class="sg-val green">₹10,800</span>
+                        <span class="sg-label">Spendable</span>
+                    </div>
+                    <div class="sg-item">
+                        <span class="sg-val danger">₹7,218</span>
+                        <span class="sg-label">Spent So Far</span>
+                    </div>
+                    <div class="sg-item">
+                        <span class="sg-val green">₹3,582</span>
+                        <span class="sg-label">Remaining</span>
+                    </div>
+                    <div class="sg-item">
+                        <span class="sg-val warning">₹1,839</span>
+                        <span class="sg-label">Over Budget</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- CATEGORY BUDGETS -->
+        <div class="card">
+            <div class="card-title">Category Budgets — March 2026</div>
+            <div class="budget-list">
+
+                <!-- FOOD — EXCEEDED -->
+                <div class="bcc-item exceeded">
+                    <div class="bcc-top">
+                        <div class="bcc-left">
+                            <span class="bcc-emoji">🍔</span>
+                            <span class="bcc-name">Food &amp; Dining</span>
+                            <span class="bcc-type want-type">Want</span>
+                        </div>
+                        <div class="bcc-right">
+                            <span class="bcc-amounts">₹3,840 / ₹3,000</span>
+                            <span class="bcc-pct pct-danger">128%</span>
+                        </div>
+                    </div>
+                    <div class="bar-track">
+                        <div class="bar-fill-danger" style="width:100%"></div>
+                    </div>
+                    <div class="bcc-bot">
+                        <span class="bcc-status danger">⚠️ ₹840 over budget</span>
+                        <span class="bcc-alert">Bot Alert: DANGER</span>
+                    </div>
+                </div>
+
+                <!-- TRANSPORT — GOOD -->
+                <div class="bcc-item">
+                    <div class="bcc-top">
+                        <div class="bcc-left">
+                            <span class="bcc-emoji">🚌</span>
+                            <span class="bcc-name">Transport</span>
+                            <span class="bcc-type need-type">Need</span>
+                        </div>
+                        <div class="bcc-right">
+                            <span class="bcc-amounts">₹420 / ₹1,000</span>
+                            <span class="bcc-pct pct-safe">42%</span>
+                        </div>
+                    </div>
+                    <div class="bar-track">
+                        <div class="bar-fill-green" style="width:42%"></div>
+                    </div>
+                    <div class="bcc-bot">
+                        <span class="bcc-status green">✅ ₹580 remaining</span>
+                        <span class="bcc-alert">16 days left</span>
+                    </div>
+                </div>
+
+                <!-- SUBSCRIPTIONS — WARNING -->
+                <div class="bcc-item warning">
+                    <div class="bcc-top">
+                        <div class="bcc-left">
+                            <span class="bcc-emoji">📱</span>
+                            <span class="bcc-name">Subscriptions</span>
+                            <span class="bcc-type want-type">Want</span>
+                        </div>
+                        <div class="bcc-right">
+                            <span class="bcc-amounts">₹448 / ₹500</span>
+                            <span class="bcc-pct pct-warn">90%</span>
+                        </div>
+                    </div>
+                    <div class="bar-track">
+                        <div class="bar-fill-gold" style="width:90%"></div>
+                    </div>
+                    <div class="bcc-bot">
+                        <span class="bcc-status warning">⚠️ Only ₹52 remaining</span>
+                        <span class="bcc-alert">Bot Alert: WARNING</span>
+                    </div>
+                </div>
+
+                <!-- SHOPPING — EXCEEDED -->
+                <div class="bcc-item exceeded">
+                    <div class="bcc-top">
+                        <div class="bcc-left">
+                            <span class="bcc-emoji">🛍️</span>
+                            <span class="bcc-name">Shopping</span>
+                            <span class="bcc-type want-type">Want</span>
+                        </div>
+                        <div class="bcc-right">
+                            <span class="bcc-amounts">₹2,499 / ₹1,500</span>
+                            <span class="bcc-pct pct-danger">166%</span>
+                        </div>
+                    </div>
+                    <div class="bar-track">
+                        <div class="bar-fill-danger" style="width:100%"></div>
+                    </div>
+                    <div class="bcc-bot">
+                        <span class="bcc-status danger">🚨 ₹999 over budget</span>
+                        <span class="bcc-alert">Amazon purchase flagged</span>
+                    </div>
+                </div>
+
+                <!-- EDUCATION — GOOD -->
+                <div class="bcc-item">
+                    <div class="bcc-top">
+                        <div class="bcc-left">
+                            <span class="bcc-emoji">📚</span>
+                            <span class="bcc-name">Education</span>
+                            <span class="bcc-type need-type">Need</span>
+                        </div>
+                        <div class="bcc-right">
+                            <span class="bcc-amounts">₹600 / ₹1,500</span>
+                            <span class="bcc-pct pct-safe">40%</span>
+                        </div>
+                    </div>
+                    <div class="bar-track">
+                        <div class="bar-fill-green" style="width:40%"></div>
+                    </div>
+                    <div class="bcc-bot">
+                        <span class="bcc-status green">✅ ₹900 remaining</span>
+                        <span class="bcc-alert">On track</span>
+                    </div>
+                </div>
+
+                <!-- MEDICAL — GOOD -->
+                <div class="bcc-item">
+                    <div class="bcc-top">
+                        <div class="bcc-left">
+                            <span class="bcc-emoji">💊</span>
+                            <span class="bcc-name">Medical</span>
+                            <span class="bcc-type need-type">Need</span>
+                        </div>
+                        <div class="bcc-right">
+                            <span class="bcc-amounts">₹411 / ₹800</span>
+                            <span class="bcc-pct pct-safe">51%</span>
+                        </div>
+                    </div>
+                    <div class="bar-track">
+                        <div class="bar-fill-green" style="width:51%"></div>
+                    </div>
+                    <div class="bcc-bot">
+                        <span class="bcc-status green">✅ ₹389 remaining</span>
+                        <span class="bcc-alert">On track</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ADD BUDGET FORM -->
+        <div class="card">
+            <div class="ab-header">
+                <div class="ab-title">+ Set Budget for a Category</div>
+                <div class="ab-sub">Allocate from your ₹2,300 unallocated balance</div>
+            </div>
+            <form class="ab-form" action="#">
+                <div class="ab-row">
+                    <div class="form-group" style="margin:0">
+                        <label>Category</label>
+                        <select>
+                            <option>🍔 Food &amp; Dining</option>
+                            <option>🚌 Transport</option>
+                            <option>📱 Subscriptions</option>
+                            <option>🛍️ Shopping</option>
+                            <option>📚 Education</option>
+                            <option>💊 Medical</option>
+                            <option>🎬 Entertainment</option>
+                            <option>📦 Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group" style="margin:0">
+                        <label>Type</label>
+                        <select>
+                            <option>Need (Essential)</option>
+                            <option>Want (Discretionary)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group" style="margin:0">
+                    <label>Budget Limit (₹)</label>
+                    <input type="number" placeholder="e.g. 2000" min="0">
+                </div>
+                <button type="submit" class="btn-submit">Set Budget →</button>
+            </form>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>© 2026 FinAlly — AI-Powered Smart Expense &amp; Savings Management System</p>
+    </footer>
+
+</body>
+</html>

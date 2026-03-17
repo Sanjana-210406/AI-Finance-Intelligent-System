@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinAlly — Admin Transactions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+    <nav class="navbar admin-navbar">
+        <div class="logo">Fin<span>Ally</span> <span class="admin-tag">ADMIN</span></div>
+        <div class="nav-links">
+            <a href="admin-dashboard.html" class="nav-item">Dashboard</a>
+            <a href="admin-users.html" class="nav-item">Users</a>
+            <a href="admin-transactions.html" class="nav-item active">Transactions</a>
+            <a href="admin-login.html" class="btn-outline">Logout</a>
+        </div>
+    </nav>
+
+    <main class="admin-main">
+
+        <!-- PAGE HEADER -->
+        <div class="page-header">
+            <div>
+                <div class="page-tag">TRANSACTION MANAGEMENT</div>
+                <h1 class="page-title">All Transactions</h1>
+                <p class="page-sub">View all transactions across all users. Flag anomalies and manage merchant database.</p>
+            </div>
+            <div class="page-header-stats">
+                <div class="phs-item">
+                    <span class="phs-val green">48,392</span>
+                    <span class="phs-label">Total</span>
+                </div>
+                <div class="phs-divider"></div>
+                <div class="phs-item">
+                    <span class="phs-val gold">247</span>
+                    <span class="phs-label">Today</span>
+                </div>
+                <div class="phs-divider"></div>
+                <div class="phs-item">
+                    <span class="phs-val warning">18</span>
+                    <span class="phs-label">Unknown</span>
+                </div>
+                <div class="phs-divider"></div>
+                <div class="phs-item">
+                    <span class="phs-val danger">5</span>
+                    <span class="phs-label">Flagged</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- FILTERS -->
+        <div class="filter-row">
+            <div class="form-group" style="margin:0; flex:1; max-width:280px;">
+                <input type="text" placeholder="🔍 Search merchant or user...">
+            </div>
+            <div class="form-group" style="margin:0;">
+                <select>
+                    <option>All Categories</option>
+                    <option>Food &amp; Dining</option>
+                    <option>Transport</option>
+                    <option>Shopping</option>
+                    <option>Subscriptions</option>
+                    <option>Education</option>
+                    <option>Medical</option>
+                </select>
+            </div>
+            <div class="form-group" style="margin:0;">
+                <select>
+                    <option>All Flags</option>
+                    <option>Anomaly</option>
+                    <option>Impulse</option>
+                    <option>Duplicate</option>
+                    <option>Recurring</option>
+                </select>
+            </div>
+            <div class="form-group" style="margin:0;">
+                <select>
+                    <option>All Profiles</option>
+                    <option>Student</option>
+                    <option>Professional</option>
+                    <option>Retired</option>
+                </select>
+            </div>
+            <div class="form-group" style="margin:0;">
+                <input type="date" value="2026-03-15">
+            </div>
+        </div>
+
+        <!-- FLAGGED ALERTS BANNER -->
+        <div class="flagged-banner">
+            <span class="fb-icon">⚠️</span>
+            <div class="fb-body">
+                <span class="fb-title">5 transactions flagged for review today</span>
+                <span class="fb-sub">3 anomalies · 2 suspected duplicates across different users</span>
+            </div>
+            <a href="#flagged" class="fb-btn">Review Flagged →</a>
+        </div>
+
+        <!-- TRANSACTIONS TABLE -->
+        <div class="card">
+            <div class="card-title">All Transactions — March 15, 2026</div>
+
+            <div class="txn-table">
+                <div class="tt-header">
+                    <span>User</span>
+                    <span>Time</span>
+                    <span>Merchant</span>
+                    <span>Category</span>
+                    <span>Amount</span>
+                    <span>Profile</span>
+                    <span>Flag</span>
+                    <span>Actions</span>
+                </div>
+
+                <!-- ANOMALY ROW -->
+                <div class="tt-row flagged-row" id="flagged">
+                    <div class="tt-user">
+                        <span class="tt-avatar">🎓</span>
+                        <span class="tt-uname">Arjun S.</span>
+                    </div>
+                    <span class="tt-time">11:34 PM</span>
+                    <span class="tt-merchant">Amazon</span>
+                    <span class="tt-cat">🛍️ Shopping</span>
+                    <span class="tt-amt danger">₹12,499</span>
+                    <span><span class="profile-chip student">Student</span></span>
+                    <span class="flag-tag anomaly-flag">⚠️ Anomaly</span>
+                    <div class="tt-actions">
+                        <a href="#" class="ut-btn view-btn">Review</a>
+                        <a href="#" class="ut-btn delete-btn">Delete</a>
+                    </div>
+                </div>
+
+                <!-- DUPLICATE ROW -->
+                <div class="tt-row flagged-row">
+                    <div class="tt-user">
+                        <span class="tt-avatar">💼</span>
+                        <span class="tt-uname">Rahul M.</span>
+                    </div>
+                    <span class="tt-time">01:20 PM</span>
+                    <span class="tt-merchant">Swiggy</span>
+                    <span class="tt-cat">🍔 Food</span>
+                    <span class="tt-amt danger">₹320</span>
+                    <span><span class="profile-chip professional">Professional</span></span>
+                    <span class="flag-tag duplicate-flag">🔁 Duplicate</span>
+                    <div class="tt-actions">
+                        <a href="#" class="ut-btn view-btn">Review</a>
+                        <a href="#" class="ut-btn delete-btn">Delete</a>
+                    </div>
+                </div>
+
+                <!-- NORMAL ROWS -->
+                <div class="tt-row">
+                    <div class="tt-user">
+                        <span class="tt-avatar">🎓</span>
+                        <span class="tt-uname">Sanjana</span>
+                    </div>
+                    <span class="tt-time">10:34 AM</span>
+                    <span class="tt-merchant">Metro Card</span>
+                    <span class="tt-cat">🚌 Transport</span>
+                    <span class="tt-amt">₹200</span>
+                    <span><span class="profile-chip student">Student</span></span>
+                    <span class="flag-tag">—</span>
+                    <div class="tt-actions">
+                        <a href="#" class="ut-btn view-btn">View</a>
+                        <a href="#" class="ut-btn delete-btn">Delete</a>
+                    </div>
+                </div>
+
+                <div class="tt-row">
+                    <div class="tt-user">
+                        <span class="tt-avatar">🏡</span>
+                        <span class="tt-uname">Sunita K.</span>
+                    </div>
+                    <span class="tt-time">09:15 AM</span>
+                    <span class="tt-merchant">Apollo Pharmacy</span>
+                    <span class="tt-cat">💊 Medical</span>
+                    <span class="tt-amt">₹840</span>
+                    <span><span class="profile-chip retired">Retired</span></span>
+                    <span class="flag-tag">—</span>
+                    <div class="tt-actions">
+                        <a href="#" class="ut-btn view-btn">View</a>
+                        <a href="#" class="ut-btn delete-btn">Delete</a>
+                    </div>
+                </div>
+
+                <div class="tt-row">
+                    <div class="tt-user">
+                        <span class="tt-avatar">💼</span>
+                        <span class="tt-uname">Meera P.</span>
+                    </div>
+                    <span class="tt-time">08:45 AM</span>
+                    <span class="tt-merchant">Netflix</span>
+                    <span class="tt-cat">📱 Subscriptions</span>
+                    <span class="tt-amt">₹199</span>
+                    <span><span class="profile-chip professional">Professional</span></span>
+                    <span class="flag-tag recurring-flag">🔄 Recurring</span>
+                    <div class="tt-actions">
+                        <a href="#" class="ut-btn view-btn">View</a>
+                        <a href="#" class="ut-btn delete-btn">Delete</a>
+                    </div>
+                </div>
+
+                <div class="tt-row">
+                    <div class="tt-user">
+                        <span class="tt-avatar">🎓</span>
+                        <span class="tt-uname">Priya R.</span>
+                    </div>
+                    <span class="tt-time">02:30 PM</span>
+                    <span class="tt-merchant">Zomato</span>
+                    <span class="tt-cat">🍔 Food</span>
+                    <span class="tt-amt">₹180</span>
+                    <span><span class="profile-chip student">Student</span></span>
+                    <span class="flag-tag impulse-flag">💭 Impulse</span>
+                    <div class="tt-actions">
+                        <a href="#" class="ut-btn view-btn">View</a>
+                        <a href="#" class="ut-btn delete-btn">Delete</a>
+                    </div>
+                </div>
+
+                <div class="tt-row">
+                    <div class="tt-user">
+                        <span class="tt-avatar">💼</span>
+                        <span class="tt-uname">Rahul M.</span>
+                    </div>
+                    <span class="tt-time">07:00 AM</span>
+                    <span class="tt-merchant">HDFC EMI</span>
+                    <span class="tt-cat">💳 Finance</span>
+                    <span class="tt-amt">₹8,500</span>
+                    <span><span class="profile-chip professional">Professional</span></span>
+                    <span class="flag-tag">—</span>
+                    <div class="tt-actions">
+                        <a href="#" class="ut-btn view-btn">View</a>
+                        <a href="#" class="ut-btn delete-btn">Delete</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- PAGINATION -->
+            <div class="pagination">
+                <span class="pg-info">Showing 7 of 247 transactions today</span>
+                <div class="pg-btns">
+                    <a href="#" class="pg-btn">← Prev</a>
+                    <a href="#" class="pg-btn active-pg">1</a>
+                    <a href="#" class="pg-btn">2</a>
+                    <a href="#" class="pg-btn">3</a>
+                    <span class="pg-dots">...</span>
+                    <a href="#" class="pg-btn">36</a>
+                    <a href="#" class="pg-btn">Next →</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- MERCHANT DATABASE -->
+        <div class="card">
+            <div class="card-title">🏪 Merchant Database — Quick Review</div>
+            <p style="font-size:13px; color:var(--text-3); margin-bottom:16px;">These merchants were auto-detected but not yet classified. Assign categories to improve system-wide accuracy.</p>
+
+            <div class="merchant-table">
+                <div class="mt-header">
+                    <span>Merchant Name</span>
+                    <span>Times Seen</span>
+                    <span>Avg Amount</span>
+                    <span>Assign Category</span>
+                    <span>Action</span>
+                </div>
+                <div class="mt-row">
+                    <span class="mt-merchant">SR Traders</span>
+                    <span class="mt-count">12</span>
+                    <span class="mt-amt">₹380</span>
+                    <div class="form-group" style="margin:0;">
+                        <select style="padding:8px 12px;">
+                            <option>-- Select Category --</option>
+                            <option>🍔 Food &amp; Dining</option>
+                            <option>🛍️ Shopping</option>
+                            <option>🚌 Transport</option>
+                            <option>💊 Medical</option>
+                            <option>📚 Education</option>
+                        </select>
+                    </div>
+                    <button class="ut-btn view-btn">Save</button>
+                </div>
+                <div class="mt-row">
+                    <span class="mt-merchant">Kirana Plus</span>
+                    <span class="mt-count">8</span>
+                    <span class="mt-amt">₹520</span>
+                    <div class="form-group" style="margin:0;">
+                        <select style="padding:8px 12px;">
+                            <option>-- Select Category --</option>
+                            <option>🍔 Food &amp; Dining</option>
+                            <option>🛍️ Shopping</option>
+                            <option>🚌 Transport</option>
+                            <option>💊 Medical</option>
+                            <option>📚 Education</option>
+                        </select>
+                    </div>
+                    <button class="ut-btn view-btn">Save</button>
+                </div>
+                <div class="mt-row">
+                    <span class="mt-merchant">Local Gym Sector 4</span>
+                    <span class="mt-count">5</span>
+                    <span class="mt-amt">₹1,200</span>
+                    <div class="form-group" style="margin:0;">
+                        <select style="padding:8px 12px;">
+                            <option>-- Select Category --</option>
+                            <option>🍔 Food &amp; Dining</option>
+                            <option>🛍️ Shopping</option>
+                            <option>🚌 Transport</option>
+                            <option>💊 Medical</option>
+                            <option>📚 Education</option>
+                            <option>🏋️ Health &amp; Fitness</option>
+                        </select>
+                    </div>
+                    <button class="ut-btn view-btn">Save</button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>© 2026 FinAlly Admin Panel — Restricted Access</p>
+    </footer>
+
+</body>
+</html>

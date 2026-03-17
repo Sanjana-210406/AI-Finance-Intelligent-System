@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinAlly — Expenses</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="expenses.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Fin<span>Ally</span></div>
+        <div class="nav-links">
+            <a href="dashboard.html" class="nav-item">Dashboard</a>
+            <a href="expenses.html" class="nav-item active">Expenses</a>
+            <a href="goals.html" class="nav-item">Goals</a>
+            <a href="alerts.html" class="nav-item">Alerts</a>
+            <a href="budget.html" class="nav-item">Budget</a>
+            <a href="simulator.html" class="nav-item">Simulator</a>
+            <a href="leaderboard.html" class="nav-item">Leaderboard</a>
+            <a href="profile.html" class="nav-item">Profile</a>
+            <a href="index.html" class="btn-outline">Logout</a>
+        </div>
+    </nav>
+
+    <main class="page-main">
+
+        <!-- PAGE HEADER -->
+        <div class="page-header">
+            <div>
+                <div class="page-tag">EXPENSES</div>
+                <h1 class="page-title">Track Your Spending</h1>
+                <p class="page-sub">Upload daily screenshots — track which days are done and which are pending.</p>
+            </div>
+            <div class="page-header-stats">
+                <div class="phs-item">
+                    <span class="phs-val danger">₹7,218</span>
+                    <span class="phs-label">Spent This Month</span>
+                </div>
+                <div class="phs-divider"></div>
+                <div class="phs-item">
+                    <span class="phs-val green">₹3,582</span>
+                    <span class="phs-label">Remaining Budget</span>
+                </div>
+                <div class="phs-divider"></div>
+                <div class="phs-item">
+                    <span class="phs-val gold">3</span>
+                    <span class="phs-label">Days Pending</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- PENDING REMINDER BANNER -->
+        <div class="reminder-banner" id="reminderBanner">
+            <span class="rb-icon">⚠️</span>
+            <div>
+                <p class="rb-title">You have <strong>3 days</strong> with missing uploads this month</p>
+                <p class="rb-sub">Feb 28, Mar 1, Mar 2 — Click any pending date below to upload screenshots.</p>
+            </div>
+            <button class="rb-close" onclick="document.getElementById('reminderBanner').style.display='none'">✕</button>
+        </div>
+
+        <!-- SECTION 1: DATE TRACKER -->
+        <div class="card date-tracker-card">
+            <div class="dt-header">
+                <div class="card-title">📅 March 2026 — Upload Tracker</div>
+                <div class="dt-legend">
+                    <span class="leg-item"><span class="leg-dot uploaded"></span>Uploaded</span>
+                    <span class="leg-item"><span class="leg-dot today"></span>Today</span>
+                    <span class="leg-item"><span class="leg-dot pending"></span>Pending</span>
+                    <span class="leg-item"><span class="leg-dot future"></span>Future</span>
+                </div>
+            </div>
+
+            <!-- CALENDAR -->
+            <div class="calendar">
+                <!-- Day labels -->
+                <div class="cal-day-label">Sun</div>
+                <div class="cal-day-label">Mon</div>
+                <div class="cal-day-label">Tue</div>
+                <div class="cal-day-label">Wed</div>
+                <div class="cal-day-label">Thu</div>
+                <div class="cal-day-label">Fri</div>
+                <div class="cal-day-label">Sat</div>
+
+                <!-- Week 1 — March starts Saturday -->
+                <div class="cal-empty"></div>
+                <div class="cal-empty"></div>
+                <div class="cal-empty"></div>
+                <div class="cal-empty"></div>
+                <div class="cal-empty"></div>
+                <div class="cal-empty"></div>
+                <div class="cal-date uploaded" onclick="openUpload('Mar 1')">
+                    <span class="cal-num">1</span>
+                    <span class="cal-dot"></span>
+                </div>
+
+                <!-- Week 2 -->
+                <div class="cal-date pending" onclick="openUpload('Mar 2')">
+                    <span class="cal-num">2</span>
+                    <span class="cal-remind">!</span>
+                </div>
+                <div class="cal-date uploaded" onclick="openUpload('Mar 3')">
+                    <span class="cal-num">3</span>
+                    <span class="cal-dot"></span>
+                </div>
+                <div class="cal-date today" onclick="openUpload('Mar 4')">
+                    <span class="cal-num">4</span>
+                    <span class="cal-today-label">Today</span>
+                </div>
+                <div class="cal-date future"><span class="cal-num">5</span></div>
+                <div class="cal-date future"><span class="cal-num">6</span></div>
+                <div class="cal-date future"><span class="cal-num">7</span></div>
+                <div class="cal-date future"><span class="cal-num">8</span></div>
+
+                <!-- Week 3 -->
+                <div class="cal-date future"><span class="cal-num">9</span></div>
+                <div class="cal-date future"><span class="cal-num">10</span></div>
+                <div class="cal-date future"><span class="cal-num">11</span></div>
+                <div class="cal-date future"><span class="cal-num">12</span></div>
+                <div class="cal-date future"><span class="cal-num">13</span></div>
+                <div class="cal-date future"><span class="cal-num">14</span></div>
+                <div class="cal-date future"><span class="cal-num">15</span></div>
+
+                <!-- Week 4 -->
+                <div class="cal-date future"><span class="cal-num">16</span></div>
+                <div class="cal-date future"><span class="cal-num">17</span></div>
+                <div class="cal-date future"><span class="cal-num">18</span></div>
+                <div class="cal-date future"><span class="cal-num">19</span></div>
+                <div class="cal-date future"><span class="cal-num">20</span></div>
+                <div class="cal-date future"><span class="cal-num">21</span></div>
+                <div class="cal-date future"><span class="cal-num">22</span></div>
+
+                <!-- Week 5 -->
+                <div class="cal-date future"><span class="cal-num">23</span></div>
+                <div class="cal-date future"><span class="cal-num">24</span></div>
+                <div class="cal-date future"><span class="cal-num">25</span></div>
+                <div class="cal-date future"><span class="cal-num">26</span></div>
+                <div class="cal-date future"><span class="cal-num">27</span></div>
+                <div class="cal-date future"><span class="cal-num">28</span></div>
+                <div class="cal-date future"><span class="cal-num">29</span></div>
+
+                <!-- Week 6 -->
+                <div class="cal-date future"><span class="cal-num">30</span></div>
+                <div class="cal-date future"><span class="cal-num">31</span></div>
+            </div>
+
+            <!-- DATE LIST -->
+            <div class="date-list">
+                <div class="dl-header">
+                    <span>Date</span>
+                    <span>Status</span>
+                    <span>Transactions</span>
+                    <span>Action</span>
+                </div>
+
+                <div class="dl-row uploaded">
+                    <span class="dl-date">📅 Mar 3, 2025 — Monday</span>
+                    <span class="dl-status uploaded-tag">✅ Uploaded</span>
+                    <span class="dl-count">4 transactions</span>
+                    <button class="dl-btn view" onclick="openUpload('Mar 3')">View / Edit</button>
+                </div>
+
+                <div class="dl-row today-row">
+                    <span class="dl-date">📅 Mar 4, 2025 — Tuesday <span class="today-chip">TODAY</span></span>
+                    <span class="dl-status today-tag">🔵 Today</span>
+                    <span class="dl-count">Not uploaded yet</span>
+                    <button class="dl-btn upload-btn" onclick="openUpload('Mar 4')">⬆ Upload Now</button>
+                </div>
+
+                <div class="dl-row pending-row">
+                    <span class="dl-date">📅 Mar 2, 2025 — Sunday</span>
+                    <span class="dl-status pending-tag">⚠️ Pending</span>
+                    <span class="dl-count">—</span>
+                    <button class="dl-btn upload-btn" onclick="openUpload('Mar 2')">⬆ Upload</button>
+                </div>
+
+                <div class="dl-row uploaded">
+                    <span class="dl-date">📅 Mar 1, 2025 — Saturday</span>
+                    <span class="dl-status uploaded-tag">✅ Uploaded</span>
+                    <span class="dl-count">2 transactions</span>
+                    <button class="dl-btn view" onclick="openUpload('Mar 1')">View / Edit</button>
+                </div>
+
+                <div class="dl-row uploaded">
+                    <span class="dl-date">📅 Feb 28, 2025 — Friday</span>
+                    <span class="dl-status uploaded-tag">✅ Uploaded</span>
+                    <span class="dl-count">3 transactions</span>
+                    <button class="dl-btn view" onclick="openUpload('Feb 28')">View / Edit</button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- SECTION 2: UPLOAD SECTION -->
+        <div class="card upload-card" id="uploadSection" style="display:none;">
+            <div class="upload-top">
+                <div>
+                    <div class="card-title">📤 Upload Screenshots — <span id="uploadDateLabel"></span></div>
+                    <p class="upload-desc">Upload your UPI or bank app screenshots for this date.</p>
+                </div>
+                <button class="upload-close" onclick="closeUpload()">✕ Close</button>
+            </div>
+
+            <div class="supported-apps">
+                <span class="app-chip">📱 Google Pay</span>
+                <span class="app-chip">📱 PhonePe</span>
+                <span class="app-chip">📱 Paytm</span>
+                <span class="app-chip">🏦 Bank SMS</span>
+                <span class="app-chip">🏦 Bank App</span>
+            </div>
+
+            <div class="drop-zone" id="dropZone" onclick="document.getElementById('fileInput').click()">
+                <div class="dz-icon">📸</div>
+                <p class="dz-title">Drag & drop screenshots here</p>
+                <p class="dz-sub">or click to browse files</p>
+                <p class="dz-formats">Supports: JPG, PNG, PDF · Multiple files allowed</p>
+                <input type="file" id="fileInput" accept="image/*,.pdf" multiple style="display:none">
+            </div>
+
+            <div class="uploaded-files" id="uploadedFiles" style="display:none;">
+                <div class="uf-header">
+                    <span class="uf-title">Uploaded Files</span>
+                    <button class="uf-add" onclick="document.getElementById('fileInput').click()">+ Add More</button>
+                </div>
+                <div class="uf-list" id="ufList"></div>
+            </div>
+
+            <button class="btn-submit" id="extractBtn" style="display:none;" onclick="runOCR()">
+                🔍 Extract Transactions
+            </button>
+        </div>
+
+        <!-- SECTION 3: PROCESSING -->
+        <div class="card processing-card" id="processingSection" style="display:none;">
+            <div class="processing-anim">
+                <div class="proc-spinner"></div>
+                <div>
+                    <p class="proc-title">Reading your screenshots...</p>
+                    <p class="proc-sub">OCR is extracting transactions. This takes a few seconds.</p>
+                </div>
+            </div>
+            <div class="proc-steps">
+                <div class="proc-step" id="ps1">📸 Reading screenshot</div>
+                <div class="proc-step" id="ps2">🔍 Extracting transactions</div>
+                <div class="proc-step" id="ps3">🏷️ Classifying categories</div>
+                <div class="proc-step" id="ps4">🔎 Checking duplicates</div>
+                <div class="proc-step" id="ps5">✅ Ready for review</div>
+            </div>
+        </div>
+
+        <!-- SECTION 4: REVIEW TABLE -->
+        <div id="reviewSection" style="display:none;">
+
+            <div class="review-summary">
+                <div class="rs-item"><span class="rs-num">5</span><span class="rs-label">Found</span></div>
+                <div class="rs-item"><span class="rs-num gold">1</span><span class="rs-label">Unknown</span></div>
+                <div class="rs-item"><span class="rs-num danger">1</span><span class="rs-label">Duplicate</span></div>
+                <div class="rs-item"><span class="rs-num green">3</span><span class="rs-label">Ready</span></div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">📋 Review & Confirm — <span id="reviewDateLabel"></span></div>
+                <p class="review-note">Edit anything incorrect. Resolve all unknown merchants before confirming.</p>
+
+                <div class="review-table">
+                    <div class="rt-header">
+                        <span>Time</span>
+                        <span>Merchant</span>
+                        <span>Amount (₹)</span>
+                        <span>Category</span>
+                        <span>Status</span>
+                        <span>Delete</span>
+                    </div>
+
+                    <div class="rt-row" id="row-1">
+                        <input type="time" class="rt-input" value="09:30">
+                        <input type="text" class="rt-input" value="Metro Card">
+                        <input type="number" class="rt-input" value="200">
+                        <select class="rt-select">
+                            <option>🍔 Food & Dining</option>
+                            <option selected>🚌 Transport</option>
+                            <option>🏠 Housing</option>
+                            <option>🎬 Entertainment</option>
+                            <option>💊 Medical</option>
+                            <option>📚 Education</option>
+                            <option>🛍️ Shopping</option>
+                            <option>📱 Subscriptions</option>
+                            <option>📦 Other</option>
+                        </select>
+                        <span class="rt-status ready">✅ Ready</span>
+                        <button class="rt-delete" onclick="deleteRow('row-1')">🗑️</button>
+                    </div>
+
+                    <div class="rt-row" id="row-2">
+                        <input type="time" class="rt-input" value="13:15">
+                        <input type="text" class="rt-input" value="Swiggy">
+                        <input type="number" class="rt-input" value="320">
+                        <select class="rt-select">
+                            <option selected>🍔 Food & Dining</option>
+                            <option>🚌 Transport</option>
+                            <option>🏠 Housing</option>
+                            <option>🎬 Entertainment</option>
+                            <option>💊 Medical</option>
+                            <option>📚 Education</option>
+                            <option>🛍️ Shopping</option>
+                            <option>📱 Subscriptions</option>
+                            <option>📦 Other</option>
+                        </select>
+                        <span class="rt-status ready">✅ Ready</span>
+                        <button class="rt-delete" onclick="deleteRow('row-2')">🗑️</button>
+                    </div>
+
+                    <!-- Duplicate -->
+                    <div class="rt-row duplicate-row" id="row-3">
+                        <input type="time" class="rt-input" value="13:20">
+                        <input type="text" class="rt-input" value="Swiggy">
+                        <input type="number" class="rt-input" value="320">
+                        <select class="rt-select">
+                            <option selected>🍔 Food & Dining</option>
+                            <option>🚌 Transport</option>
+                            <option>🏠 Housing</option>
+                            <option>🎬 Entertainment</option>
+                            <option>💊 Medical</option>
+                            <option>📚 Education</option>
+                            <option>🛍️ Shopping</option>
+                            <option>📱 Subscriptions</option>
+                            <option>📦 Other</option>
+                        </select>
+                        <span class="rt-status duplicate">⚠️ Duplicate</span>
+                        <div class="dup-actions">
+                            <button class="dup-keep" onclick="keepDuplicate('row-3')">Keep</button>
+                            <button class="rt-delete" onclick="deleteRow('row-3')">🗑️</button>
+                        </div>
+                    </div>
+
+                    <!-- Unknown -->
+                    <div class="rt-row unknown-row" id="row-4">
+                        <input type="time" class="rt-input" value="16:45">
+                        <input type="text" class="rt-input" value="SR Traders">
+                        <input type="number" class="rt-input" value="450">
+                        <select class="rt-select">
+                            <option>🍔 Food & Dining</option>
+                            <option>🚌 Transport</option>
+                            <option>🏠 Housing</option>
+                            <option>🎬 Entertainment</option>
+                            <option>💊 Medical</option>
+                            <option>📚 Education</option>
+                            <option>🛍️ Shopping</option>
+                            <option>📱 Subscriptions</option>
+                            <option selected>📦 Other</option>
+                        </select>
+                        <span class="rt-status unknown">❓ Unknown</span>
+                        <button class="rt-delete" onclick="deleteRow('row-4')">🗑️</button>
+                    </div>
+                    <div class="unknown-resolver" id="resolver-row-4">
+                        <div class="ur-icon">🤔</div>
+                        <div class="ur-content">
+                            <p class="ur-title">We don't recognize <strong>"SR Traders"</strong></p>
+                            <p class="ur-sub">What was this expense for? We'll remember this merchant next time.</p>
+                            <div class="ur-inputs">
+                                <select class="ur-select" onchange="resolveUnknown('row-4', this.value)">
+                                    <option value="">-- Select what this was for --</option>
+                                    <option value="Food">🍔 Food & Dining (Restaurant / Grocery)</option>
+                                    <option value="Transport">🚌 Transport (Fuel / Auto)</option>
+                                    <option value="Housing">🏠 Housing (Rent / Maintenance)</option>
+                                    <option value="Shopping">🛍️ Shopping (Clothes / Electronics)</option>
+                                    <option value="Medical">💊 Medical (Medicine / Clinic)</option>
+                                    <option value="Education">📚 Education (Books / Fees)</option>
+                                    <option value="Entertainment">🎬 Entertainment</option>
+                                    <option value="Other">📦 Other</option>
+                                </select>
+                                <input type="text" class="ur-note" placeholder="Optional note (e.g. grocery near college)">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="rt-row" id="row-5">
+                        <input type="time" class="rt-input" value="20:00">
+                        <input type="text" class="rt-input" value="Rapido">
+                        <input type="number" class="rt-input" value="85">
+                        <select class="rt-select">
+                            <option>🍔 Food & Dining</option>
+                            <option selected>🚌 Transport</option>
+                            <option>🏠 Housing</option>
+                            <option>🎬 Entertainment</option>
+                            <option>💊 Medical</option>
+                            <option>📚 Education</option>
+                            <option>🛍️ Shopping</option>
+                            <option>📱 Subscriptions</option>
+                            <option>📦 Other</option>
+                        </select>
+                        <span class="rt-status ready">✅ Ready</span>
+                        <button class="rt-delete" onclick="deleteRow('row-5')">🗑️</button>
+                    </div>
+
+                </div>
+
+                <div class="unresolved-warning" id="unresolvedWarning" style="display:none;">
+                    ⚠️ Please resolve all unknown merchants before saving.
+                </div>
+
+                <div class="confirm-row">
+                    <button class="btn-confirm" onclick="confirmAndSave()">✅ Confirm & Save All</button>
+                    <button class="btn-cancel-review" onclick="cancelReview()">✖ Cancel & Re-upload</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 5: TRANSACTION HISTORY -->
+        <div class="card history-card">
+            <div class="history-top">
+                <div class="card-title">📂 Transaction History — March 2026</div>
+                <div class="history-filters">
+                    <select class="hf-select">
+                        <option>March 2026</option>
+                        <option>February 2025</option>
+                    </select>
+                    <select class="hf-select">
+                        <option>All Categories</option>
+                        <option>Food & Dining</option>
+                        <option>Transport</option>
+                        <option>Subscriptions</option>
+                        <option>Shopping</option>
+                        <option>Education</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="history-table">
+                <div class="ht-header">
+                    <span>Date</span>
+                    <span>Time</span>
+                    <span>Merchant</span>
+                    <span>Category</span>
+                    <span>Type</span>
+                    <span>Amount</span>
+                    <span>Flag</span>
+                </div>
+                <div class="ht-row">
+                    <span class="ht-date">04 Mar</span>
+                    <span class="ht-time">09:30</span>
+                    <span class="ht-merchant">Metro Card</span>
+                    <span class="ht-cat">🚌 Transport</span>
+                    <span><span class="tag-need">Need</span></span>
+                    <span class="ht-amt danger">- ₹200</span>
+                    <span></span>
+                </div>
+                <div class="ht-row">
+                    <span class="ht-date">04 Mar</span>
+                    <span class="ht-time">13:15</span>
+                    <span class="ht-merchant">Swiggy</span>
+                    <span class="ht-cat">🍔 Food & Dining</span>
+                    <span><span class="tag-want">Want</span></span>
+                    <span class="ht-amt danger">- ₹320</span>
+                    <span></span>
+                </div>
+                <div class="ht-row">
+                    <span class="ht-date">03 Mar</span>
+                    <span class="ht-time">11:00</span>
+                    <span class="ht-merchant">Netflix</span>
+                    <span class="ht-cat">📱 Subscriptions</span>
+                    <span><span class="tag-subscription">Sub</span></span>
+                    <span class="ht-amt danger">- ₹199</span>
+                    <span class="flag sub-flag">🔄 Recurring</span>
+                </div>
+                <div class="ht-row">
+                    <span class="ht-date">01 Mar</span>
+                    <span class="ht-time">15:30</span>
+                    <span class="ht-merchant">Amazon</span>
+                    <span class="ht-cat">🛍️ Shopping</span>
+                    <span><span class="tag-want">Want</span></span>
+                    <span class="ht-amt danger">- ₹2,499</span>
+                    <span class="flag anomaly-flag">⚠️ Anomaly</span>
+                </div>
+                <div class="ht-row">
+                    <span class="ht-date">28 Feb</span>
+                    <span class="ht-time">21:45</span>
+                    <span class="ht-merchant">Zomato</span>
+                    <span class="ht-cat">🍔 Food & Dining</span>
+                    <span><span class="tag-want">Want</span></span>
+                    <span class="ht-amt danger">- ₹180</span>
+                    <span class="flag emotional-flag">💭 Impulse</span>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        // OPEN UPLOAD FOR A DATE
+        function openUpload(date) {
+            document.getElementById('uploadDateLabel').textContent = date;
+            document.getElementById('reviewDateLabel').textContent = date;
+            document.getElementById('uploadSection').style.display = 'block';
+            document.getElementById('uploadSection').scrollIntoView({ behavior: 'smooth' });
+            // Reset upload state
+            document.getElementById('uploadedFiles').style.display = 'none';
+            document.getElementById('ufList').innerHTML = '';
+            document.getElementById('extractBtn').style.display = 'none';
+            document.getElementById('dropZone').style.display = 'flex';
+        }
+
+        function closeUpload() {
+            document.getElementById('uploadSection').style.display = 'none';
+            document.getElementById('processingSection').style.display = 'none';
+            document.getElementById('reviewSection').style.display = 'none';
+        }
+
+        // FILE UPLOAD
+        const fileInput = document.getElementById('fileInput');
+        const dropZone  = document.getElementById('dropZone');
+        const ufList    = document.getElementById('ufList');
+
+        fileInput.addEventListener('change', function() { handleFiles(this.files); });
+
+        dropZone.addEventListener('dragover', function(e) { e.preventDefault(); this.classList.add('drag-over'); });
+        dropZone.addEventListener('dragleave', function() { this.classList.remove('drag-over'); });
+        dropZone.addEventListener('drop', function(e) {
+            e.preventDefault(); this.classList.remove('drag-over'); handleFiles(e.dataTransfer.files);
+        });
+
+        function handleFiles(files) {
+            Array.from(files).forEach(file => {
+                const div = document.createElement('div');
+                div.className = 'uf-item';
+                div.innerHTML = `<span class="uf-icon">🖼️</span><span class="uf-name">${file.name}</span><span class="uf-size">${(file.size/1024).toFixed(1)} KB</span><span class="uf-check">✅</span>`;
+                ufList.appendChild(div);
+            });
+            document.getElementById('uploadedFiles').style.display = 'block';
+            document.getElementById('extractBtn').style.display = 'block';
+            dropZone.style.display = 'none';
+        }
+
+        // OCR
+        function runOCR() {
+            document.getElementById('uploadSection').style.display = 'none';
+            document.getElementById('processingSection').style.display = 'block';
+            const steps = ['ps1','ps2','ps3','ps4','ps5'];
+            let i = 0;
+            const interval = setInterval(() => {
+                if (i > 0) document.getElementById(steps[i-1]).classList.remove('active');
+                if (i < steps.length) {
+                    document.getElementById(steps[i]).classList.add('active','done');
+                    i++;
+                } else {
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        document.getElementById('processingSection').style.display = 'none';
+                        document.getElementById('reviewSection').style.display = 'block';
+                        document.getElementById('reviewSection').scrollIntoView({ behavior: 'smooth' });
+                    }, 400);
+                }
+            }, 700);
+        }
+
+        function deleteRow(rowId) {
+            const row = document.getElementById(rowId);
+            const resolver = document.getElementById('resolver-' + rowId);
+            if (row) row.remove();
+            if (resolver) resolver.remove();
+        }
+
+        function keepDuplicate(rowId) {
+            const row = document.getElementById(rowId);
+            row.classList.remove('duplicate-row');
+            const status = row.querySelector('.rt-status');
+            status.className = 'rt-status ready';
+            status.textContent = '✅ Ready';
+            const dupActions = row.querySelector('.dup-actions');
+            if (dupActions) {
+                const btn = document.createElement('button');
+                btn.className = 'rt-delete';
+                btn.textContent = '🗑️';
+                btn.onclick = () => deleteRow(rowId);
+                dupActions.replaceWith(btn);
+            }
+        }
+
+        function resolveUnknown(rowId, value) {
+            if (!value) return;
+            const row = document.getElementById(rowId);
+            const status = row.querySelector('.rt-status');
+            status.className = 'rt-status ready';
+            status.textContent = '✅ Ready';
+            row.classList.remove('unknown-row');
+        }
+
+        function confirmAndSave() {
+            const unknowns = document.querySelectorAll('.rt-status.unknown');
+            if (unknowns.length > 0) {
+                document.getElementById('unresolvedWarning').style.display = 'flex';
+                return;
+            }
+            alert('✅ Transactions saved! Date marked as uploaded.');
+            document.getElementById('reviewSection').style.display = 'none';
+            // Mark today as uploaded in UI
+            document.querySelectorAll('.cal-date.today').forEach(el => {
+                el.classList.remove('today');
+                el.classList.add('uploaded');
+            });
+            document.querySelectorAll('.today-row').forEach(el => {
+                el.querySelector('.dl-status').className = 'dl-status uploaded-tag';
+                el.querySelector('.dl-status').textContent = '✅ Uploaded';
+            });
+        }
+
+        function cancelReview() {
+            document.getElementById('reviewSection').style.display = 'none';
+            document.getElementById('uploadSection').style.display = 'block';
+            document.getElementById('uploadedFiles').style.display = 'none';
+            document.getElementById('ufList').innerHTML = '';
+            document.getElementById('extractBtn').style.display = 'none';
+            document.getElementById('dropZone').style.display = 'flex';
+        }
+    </script>
+
+</body>
+</html>

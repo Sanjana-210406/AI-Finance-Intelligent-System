@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinAlly — What-If Simulator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="simulator.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Fin<span>Ally</span></div>
+        <div class="nav-links">
+            <a href="dashboard.html" class="nav-item">Dashboard</a>
+            <a href="expenses.html" class="nav-item">Expenses</a>
+            <a href="goals.html" class="nav-item">Goals</a>
+            <a href="alerts.html" class="nav-item">Alerts</a>
+            <a href="budget.html" class="nav-item">Budget</a>
+            <a href="simulator.html" class="nav-item active">Simulator</a>
+            <a href="leaderboard.html" class="nav-item">Leaderboard</a>
+            <a href="profile.html" class="nav-item">Profile</a>
+            <a href="index.html" class="btn-outline">Logout</a>
+        </div>
+    </nav>
+
+    <main class="page-main">
+
+        <!-- PAGE HEADER -->
+        <div class="page-header">
+            <div>
+                <div class="page-tag">WHAT-IF SIMULATOR</div>
+                <h1 class="page-title">Financial Simulator</h1>
+                <p class="page-sub">Model any financial scenario before it happens. Read-only — nothing is saved.</p>
+            </div>
+            <div class="sim-notice">
+                <span class="sim-notice-icon">🔒</span>
+                <span>Simulation only — no data is changed</span>
+            </div>
+        </div>
+
+        <!-- CURRENT STATE BANNER -->
+        <div class="current-state">
+            <div class="cs-title">Your Current Financial State</div>
+            <div class="cs-stats">
+                <div class="cs-item">
+                    <span class="cs-label">Monthly Income</span>
+                    <span class="cs-val">₹12,000</span>
+                </div>
+                <div class="cs-divider"></div>
+                <div class="cs-item">
+                    <span class="cs-label">Savings Locked</span>
+                    <span class="cs-val gold">₹1,200</span>
+                </div>
+                <div class="cs-divider"></div>
+                <div class="cs-item">
+                    <span class="cs-label">Monthly Expenses</span>
+                    <span class="cs-val danger">₹7,218</span>
+                </div>
+                <div class="cs-divider"></div>
+                <div class="cs-item">
+                    <span class="cs-label">Health Score</span>
+                    <span class="cs-val green">72</span>
+                </div>
+                <div class="cs-divider"></div>
+                <div class="cs-item">
+                    <span class="cs-label">Emergency Fund</span>
+                    <span class="cs-val">₹8,400</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SCENARIO TABS -->
+        <div class="scenario-tabs">
+            <div class="stab active">💸 Big Purchase</div>
+            <div class="stab">📉 Salary Cut</div>
+            <div class="stab">🏠 New EMI</div>
+            <div class="stab">💼 Job Loss</div>
+            <div class="stab">📈 Salary Hike</div>
+        </div>
+
+        <div class="row-2col">
+
+            <!-- SCENARIO 1 — BIG PURCHASE -->
+            <div class="card sim-card">
+                <div class="card-title">💸 Scenario — Big Purchase</div>
+                <p class="sim-desc">What happens to your finances if you make a large one-time purchase?</p>
+
+                <div class="sim-form">
+                    <div class="form-group">
+                        <label>What do you want to buy?</label>
+                        <select>
+                            <option>📱 New Phone</option>
+                            <option>💻 Laptop</option>
+                            <option>🎧 Headphones</option>
+                            <option>👟 Shoes / Clothes</option>
+                            <option>📚 Course / Books</option>
+                            <option>✈️ Trip / Travel</option>
+                            <option>📦 Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Purchase Amount (₹)</label>
+                        <input type="number" value="25000" placeholder="e.g. 25000">
+                    </div>
+                    <div class="form-group">
+                        <label>Payment Method</label>
+                        <select>
+                            <option>Pay from current balance</option>
+                            <option>Pay in 3 months EMI</option>
+                            <option>Pay in 6 months EMI</option>
+                            <option>Pay in 12 months EMI</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RESULT PREVIEW -->
+            <div class="card result-card">
+                <div class="card-title">📊 Simulated Impact</div>
+
+                <div class="impact-banner danger-impact">
+                    <span class="impact-icon">⚠️</span>
+                    <span class="impact-msg">This purchase will significantly impact your finances</span>
+                </div>
+
+                <div class="result-list">
+                    <div class="result-row">
+                        <span class="rr-label">Remaining Balance After Purchase</span>
+                        <div class="rr-compare">
+                            <span class="rr-before">₹3,582</span>
+                            <span class="rr-arrow">→</span>
+                            <span class="rr-after danger">-₹21,418</span>
+                        </div>
+                    </div>
+                    <div class="result-row">
+                        <span class="rr-label">Health Score After Purchase</span>
+                        <div class="rr-compare">
+                            <span class="rr-before">72</span>
+                            <span class="rr-arrow">→</span>
+                            <span class="rr-after danger">41</span>
+                        </div>
+                    </div>
+                    <div class="result-row">
+                        <span class="rr-label">Emergency Fund Impact</span>
+                        <div class="rr-compare">
+                            <span class="rr-before">₹8,400</span>
+                            <span class="rr-arrow">→</span>
+                            <span class="rr-after warning">₹0</span>
+                        </div>
+                    </div>
+                    <div class="result-row">
+                        <span class="rr-label">Goal Delay — Emergency Fund</span>
+                        <div class="rr-compare">
+                            <span class="rr-before">Jun 2026</span>
+                            <span class="rr-arrow">→</span>
+                            <span class="rr-after danger">Feb 2027</span>
+                        </div>
+                    </div>
+                    <div class="result-row">
+                        <span class="rr-label">Months to Recover</span>
+                        <div class="rr-compare">
+                            <span class="rr-before">—</span>
+                            <span class="rr-arrow">→</span>
+                            <span class="rr-after danger">8 months</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bot-advice danger-advice">
+                    <span class="ba-icon">🤖</span>
+                    <div class="ba-body">
+                        <div class="ba-title">Bot Advice</div>
+                        <div class="ba-msg">This purchase exceeds your current balance and will wipe your emergency fund. Consider saving for 3 months first, or choose a 6-month EMI plan to reduce monthly impact to ₹4,167.</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- SCENARIO 2 — SALARY CUT -->
+        <div class="card scenario-full">
+            <div class="card-title">📉 Scenario — What if my salary is cut by 20%?</div>
+            <div class="row-3col">
+                <div class="sc-stat">
+                    <span class="sc-label">New Income</span>
+                    <span class="sc-val warning">₹9,600</span>
+                    <span class="sc-sub">Was ₹12,000 (-₹2,400)</span>
+                </div>
+                <div class="sc-stat">
+                    <span class="sc-label">New Savings Lock</span>
+                    <span class="sc-val gold">₹960</span>
+                    <span class="sc-sub">Was ₹1,200 (-₹240)</span>
+                </div>
+                <div class="sc-stat">
+                    <span class="sc-label">New Spendable</span>
+                    <span class="sc-val warning">₹8,640</span>
+                    <span class="sc-sub">Was ₹10,800 (-₹2,160)</span>
+                </div>
+                <div class="sc-stat">
+                    <span class="sc-label">Projected Health Score</span>
+                    <span class="sc-val warning">58</span>
+                    <span class="sc-sub">Was 72 (-14 points)</span>
+                </div>
+                <div class="sc-stat">
+                    <span class="sc-label">Categories to Cut</span>
+                    <span class="sc-val danger">Food + Shopping</span>
+                    <span class="sc-sub">Reduce by ₹2,000 total</span>
+                </div>
+                <div class="sc-stat">
+                    <span class="sc-label">Emergency Fund Runway</span>
+                    <span class="sc-val green">1.2 months</span>
+                    <span class="sc-sub">Can survive without income</span>
+                </div>
+            </div>
+            <div class="bot-advice warning-advice" style="margin-top:16px;">
+                <span class="ba-icon">🤖</span>
+                <div class="ba-body">
+                    <div class="ba-title">Bot Advice</div>
+                    <div class="ba-msg">A 20% salary cut is manageable if you reduce Food &amp; Dining by ₹1,000 and pause Shopping budget. Your savings rate will drop but emergency fund stays intact. Build 3 months runway before this happens.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SCENARIO 3 — NEW EMI -->
+        <div class="card scenario-full">
+            <div class="card-title">🏠 Scenario — What if I take a new EMI of ₹3,000/month?</div>
+            <div class="row-3col">
+                <div class="sc-stat">
+                    <span class="sc-label">New Monthly Commitment</span>
+                    <span class="sc-val danger">₹3,000</span>
+                    <span class="sc-sub">Added to fixed expenses</span>
+                </div>
+                <div class="sc-stat">
+                    <span class="sc-label">Remaining Spendable</span>
+                    <span class="sc-val danger">₹7,800</span>
+                    <span class="sc-sub">Was ₹10,800 (-₹3,000)</span>
+                </div>
+                <div class="sc-stat">
+                    <span class="sc-label">Projected Health Score</span>
+                    <span class="sc-val warning">55</span>
+                    <span class="sc-sub">Was 72 (-17 points)</span>
+                </div>
+                <div class="sc-stat">
+                    <span class="sc-label">Food Budget Must Be</span>
+                    <span class="sc-val warning">₹2,000</span>
+                    <span class="sc-sub">Currently ₹3,000 allocated</span>
+                </div>
+                <div class="sc-stat">
+                    <span class="sc-label">Shopping Budget</span>
+                    <span class="sc-val danger">₹0</span>
+                    <span class="sc-sub">Must be paused entirely</span>
+                </div>
+                <div class="sc-stat">
+                    <span class="sc-label">Goal Progress Impact</span>
+                    <span class="sc-val warning">Delayed 4 months</span>
+                    <span class="sc-sub">All goals pushed back</span>
+                </div>
+            </div>
+            <div class="bot-advice danger-advice" style="margin-top:16px;">
+                <span class="ba-icon">🤖</span>
+                <div class="ba-body">
+                    <div class="ba-title">Bot Advice</div>
+                    <div class="ba-msg">Taking a ₹3,000 EMI on a ₹12,000 income is risky. That is 25% of your income in one commitment. Recommended maximum EMI for your profile is ₹1,800 (15% of income). Consider a smaller loan or wait 6 months to build more savings first.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SCENARIO 4 — JOB LOSS -->
+        <div class="card scenario-full">
+            <div class="card-title">💼 Scenario — What if I lose my job today?</div>
+            <div class="row-3col">
+                <div class="sc-stat">
+                    <span class="sc-label">Emergency Fund</span>
+                    <span class="sc-val warning">₹8,400</span>
+                    <span class="sc-sub">Current safety net</span>
+                </div>
+                <div class="sc-stat">
+                    <span class="sc-label">Survival Duration</span>
+                    <span class="sc-val warning">1.2 months</span>
+                    <span class="sc-sub">At current expense rate</span>
+                </div>
+                <div class="sc-stat">
+                    <span class="sc-label">Minimum Monthly Need</span>
+                    <span class="sc-val">₹4,200</span>
+                    <span class="sc-sub">Essentials only</span>
+                </div>
+                <div class="sc-stat">
+                    <span class="sc-label">Survival on Minimum</span>
+                    <span class="sc-val green">2 months</span>
+                    <span class="sc-sub">If you cut to essentials</span>
+                </div>
+                <div class="sc-stat">
+                    <span class="sc-label">Health Score</span>
+                    <span class="sc-val danger">12</span>
+                    <span class="sc-sub">Drops to critical immediately</span>
+                </div>
+                <div class="sc-stat">
+                    <span class="sc-label">Target Emergency Fund</span>
+                    <span class="sc-val green">₹30,000</span>
+                    <span class="sc-sub">3 months — currently 28%</span>
+                </div>
+            </div>
+            <div class="bot-advice danger-advice" style="margin-top:16px;">
+                <span class="ba-icon">🤖</span>
+                <div class="ba-body">
+                    <div class="ba-title">Bot Advice — URGENT</div>
+                    <div class="ba-msg">Your emergency fund covers only 1.2 months. This is critically low. Your target is ₹30,000 — you are at 28%. Prioritize Emergency Fund goal above all others. Every month you delay increases your financial risk significantly.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SCENARIO 5 — SALARY HIKE -->
+        <div class="card scenario-full">
+            <div class="card-title">📈 Scenario — What if I get a 30% salary hike?</div>
+            <div class="row-3col">
+                <div class="sc-stat">
+                    <span class="sc-label">New Income</span>
+                    <span class="sc-val green">₹15,600</span>
+                    <span class="sc-sub">Was ₹12,000 (+₹3,600)</span>
+                </div>
+                <div class="sc-stat">
+                    <span class="sc-label">New Savings Lock (10%)</span>
+                    <span class="sc-val gold">₹1,560</span>
+                    <span class="sc-sub">Was ₹1,200 (+₹360)</span>
+                </div>
+                <div class="sc-stat">
+                    <span class="sc-label">New Spendable</span>
+                    <span class="sc-val green">₹14,040</span>
+                    <span class="sc-sub">Was ₹10,800 (+₹3,240)</span>
+                </div>
+                <div class="sc-stat">
+                    <span class="sc-label">Projected Health Score</span>
+                    <span class="sc-val green">86</span>
+                    <span class="sc-sub">Was 72 (+14 points)</span>
+                </div>
+                <div class="sc-stat">
+                    <span class="sc-label">Emergency Fund — Target</span>
+                    <span class="sc-val green">Oct 2026</span>
+                    <span class="sc-sub">Was Feb 2027 (4 months early)</span>
+                </div>
+                <div class="sc-stat">
+                    <span class="sc-label">Extra Investable Amount</span>
+                    <span class="sc-val green">₹3,240</span>
+                    <span class="sc-sub">Per month available</span>
+                </div>
+            </div>
+            <div class="bot-advice green-advice" style="margin-top:16px;">
+                <span class="ba-icon">🤖</span>
+                <div class="ba-body">
+                    <div class="ba-title">Bot Advice</div>
+                    <div class="ba-msg">A 30% hike is excellent! Recommended allocation of the extra ₹3,240 — put ₹1,500 toward Emergency Fund, ₹1,000 toward a new investment goal, and ₹740 toward lifestyle upgrade. Avoid lifestyle inflation beyond 23% of the hike.</div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>© 2026 FinAlly — AI-Powered Smart Expense &amp; Savings Management System</p>
+    </footer>
+
+</body>
+</html>
