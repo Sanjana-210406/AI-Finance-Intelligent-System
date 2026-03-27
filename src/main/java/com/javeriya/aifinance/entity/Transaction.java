@@ -6,7 +6,10 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "expenses")
 public class Transaction {
-
+        private String aiCategory;
+        private String anomaly;
+        private String decision;
+        private Double healthScore;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -83,4 +86,15 @@ public class Transaction {
 
     public boolean isUserCorrectedCategory() { return userCorrectedCategory; }
     public void setUserCorrectedCategory(boolean userCorrectedCategory) { this.userCorrectedCategory = userCorrectedCategory; }
+    public String getAiCategory() { return aiCategory; }
+    public void setAiCategory(String aiCategory) { this.aiCategory = aiCategory; }
+
+    public String getAnomaly() { return anomaly; }
+    public void setAnomaly(String anomaly) { this.anomaly = anomaly; }
+
+    public String getDecision() { return decision; }
+    public void setDecision(String decision) { this.decision = decision; }
+
+    public Double getHealthScore() { return healthScore; }
+    public void setHealthScore(Double healthScore) { this.healthScore = healthScore; }
 }
